@@ -310,36 +310,36 @@ export default function LandingPage() {
 
         <section id="benefits" className="py-12 px-4 md:px-6 lg:px-8 bg-muted">
           <div className="container mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Benefits</h2>
+            <h2 className="text-4xl font-bold mb-8 text-center">Benefits</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-2xl font-semibold mb-2">
+                <h3 className="text-xl font-semibold mb-2">
                   For Growing Associations
                 </h3>
                 <ul className="list-disc list-inside space-y-2">
-                  <li className="text-xl">
+                  <li className="text-lg">
                     Ensure compliance with German cannabis laws
                   </li>
-                  <li className="text-xl">
+                  <li className="text-lg">
                     Streamline documentation processes
                   </li>
-                  <li className="text-xl">Reduce administrative overhead</li>
-                  <li className="text-xl">
+                  <li className="text-lg">Reduce administrative overhead</li>
+                  <li className="text-lg">
                     Improve yield and quality through data-driven insights
                   </li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-2xl font-semibold mb-2">For Members</h3>
+                <h3 className="text-xl font-semibold mb-2">For Members</h3>
                 <ul className="list-disc list-inside space-y-2">
-                  <li className="text-xl">
+                  <li className="text-lg">
                     Access to high-quality, legally grown cannabis
                   </li>
-                  <li className="text-xl">
+                  <li className="text-lg">
                     Transparency in cultivation practices
                   </li>
-                  <li className="text-xl">Consistent supply management</li>
-                  <li className="text-xl">
+                  <li className="text-lg">Consistent supply management</li>
+                  <li className="text-lg">
                     Educational resources on responsible use
                   </li>
                 </ul>
