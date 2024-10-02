@@ -29,7 +29,7 @@ import {
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="py-6 px-4 md:px-6 lg:px-8 border-b">
+      <header className="py-6 px-4 md:px-6 lg:px-8 border-b bg-white shadow-md">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-xl font-bold flex items-start">
             <Sprout className="mr-2 h-16 w-16 text-green-700" />
@@ -37,16 +37,15 @@ export default function LandingPage() {
               <span className="text-base sm:text-base md:text-base lg:text-2xl xl:text-3xl 2xl:text-3xl">
                 Cannabis Association Cultivation Manager
               </span>
-
               <span className="text-sm mt-1 block">© GrowAGram</span>
             </div>
           </h1>
           <nav>
-            <ul className="flex space-x-4">
+            <ul className="flex space-x-6">
               <li>
                 <a
                   href="#features"
-                  className="hover:text-primary transition-colors"
+                  className="text-gray-700 hover:text-green-700 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Features
                 </a>
@@ -54,7 +53,7 @@ export default function LandingPage() {
               <li>
                 <a
                   href="#benefits"
-                  className="hover:text-primary transition-colors"
+                  className="text-gray-700 hover:text-green-700 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Benefits
                 </a>
@@ -62,7 +61,7 @@ export default function LandingPage() {
               <li>
                 <a
                   href="#contact"
-                  className="hover:text-primary transition-colors"
+                  className="text-gray-700 hover:text-green-700 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Contact
                 </a>
