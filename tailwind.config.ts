@@ -1,7 +1,9 @@
 import type { Config } from "tailwindcss";
 
+import animate from 'tailwindcss-animate'; // Use ES module style import
+
 const config: Config = {
-    darkMode: ["class"],
+	darkMode: ['class'], // Enable class-based dark mode
     content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -58,6 +60,6 @@ const config: Config = {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animate], // Use the imported plugin
 };
 export default config;

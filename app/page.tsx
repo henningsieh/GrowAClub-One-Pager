@@ -1,7 +1,12 @@
-import React from "react";
+// app/page.tsx
+"use client"; // This ensures the component is rendered on the client side
+
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
+  Sun,
+  Moon,
   Sprout,
   FileText,
   ShieldCheck,
@@ -27,12 +32,41 @@ import {
 } from "lucide-react";
 
 export default function LandingPage() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Check if dark mode is already enabled in localStorage or system preference
+    const isDark =
+      localStorage.getItem("theme") === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+      setDarkMode(true);
+    } else {
+      document.documentElement.classList.remove("dark");
+      setDarkMode(false);
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    if (darkMode) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    }
+    setDarkMode(!darkMode);
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="py-6 px-4 md:px-6 lg:px-8 border-b bg-white shadow-md">
+      <header className="py-6 px-4 md:px-6 lg:px-8 border-b ">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-xl font-bold flex items-start">
-            <Sprout className="mr-2 h-16 w-16 text-green-700" />
+            <Sprout className="mr-2 h-16 w-16 text-green-700 dark:text-green-600" />
             <div>
               <span className="text-base sm:text-base md:text-base lg:text-2xl xl:text-3xl 2xl:text-3xl">
                 Cannabis Association Cultivation Manager
@@ -40,12 +74,12 @@ export default function LandingPage() {
               <span className="text-sm mt-1 block">© GrowAGram</span>
             </div>
           </h1>
-          <nav>
+          <nav className="flex items-center">
             <ul className="flex space-x-6">
               <li>
                 <a
                   href="#features"
-                  className="text-gray-700 hover:text-green-700 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className="text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-400 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Features
                 </a>
@@ -53,7 +87,7 @@ export default function LandingPage() {
               <li>
                 <a
                   href="#benefits"
-                  className="text-gray-700 hover:text-green-700 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className="text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-400 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Benefits
                 </a>
@@ -61,12 +95,24 @@ export default function LandingPage() {
               <li>
                 <a
                   href="#contact"
-                  className="text-gray-700 hover:text-green-700 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className="text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-400 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Contact
                 </a>
               </li>
             </ul>
+
+            {/* Dark Mode Toggle Button */}
+            <button
+              onClick={toggleDarkMode}
+              className="ml-6 p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition duration-300"
+            >
+              {darkMode ? (
+                <Sun className="h-5 w-5 text-yellow-500" />
+              ) : (
+                <Moon className="h-5 w-5 text-gray-800 dark:text-gray-200" />
+              )}
+            </button>
           </nav>
         </div>
       </header>
@@ -316,8 +362,8 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="py-6 px-4 md:px-6 lg:px-8 border-t">
-        <div className="container mx-auto text-center text-sm text-muted-foreground">
+      <footer className="py-6 px-4 md:px-6 lg:px-8 border-t bg-white dark:bg-gray-800">
+        <div className="container mx-auto text-center text-sm text-muted-foreground dark:text-gray-400">
           <p>&copy; 2023 GrowAGram. All rights reserved.</p>
           <p className="mt-2">
             GrowAGram is designed to assist cannabis growing associations in
