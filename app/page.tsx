@@ -79,7 +79,7 @@ export default function LandingPage() {
               <li>
                 <a
                   href="#features"
-                  className="text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-400 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className="text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Features
                 </a>
@@ -87,7 +87,7 @@ export default function LandingPage() {
               <li>
                 <a
                   href="#benefits"
-                  className="text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-400 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className="text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Benefits
                 </a>
@@ -95,7 +95,7 @@ export default function LandingPage() {
               <li>
                 <a
                   href="#contact"
-                  className="text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-400 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className="text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Contact
                 </a>
@@ -137,7 +137,7 @@ export default function LandingPage() {
               Key Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card>
+              <Card className="dark:bg-zinc-800 dark:border-green-800">
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <Leaf className="mr-2 h-5 w-5" />
@@ -174,7 +174,7 @@ export default function LandingPage() {
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="dark:bg-zinc-800 dark:border-green-800">
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <FileText className="mr-2 h-5 w-5" />
@@ -214,7 +214,7 @@ export default function LandingPage() {
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="dark:bg-zinc-800 dark:border-green-800">
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <ShieldCheck className="mr-2 h-5 w-5" />
@@ -250,7 +250,7 @@ export default function LandingPage() {
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="dark:bg-zinc-800 dark:border-green-800">
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <Globe className="mr-2 h-5 w-5" />
@@ -290,7 +290,7 @@ export default function LandingPage() {
                   </p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="dark:bg-zinc-800 dark:border-green-800">
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <Languages className="mr-2 h-5 w-5" />
