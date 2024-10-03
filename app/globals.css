@@ -76,3 +76,12 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .feature-list li {
+    @apply flex items-center ml-1 py-1;
+  }
+  .feature-list li:hover {
+    @apply bg-green-400/40 dark:bg-green-800/40 rounded-sm transition-colors duration-300;
+  }
+}

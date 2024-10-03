@@ -137,47 +137,51 @@ export default function LandingPage() {
               Key Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="dark:bg-zinc-800 dark:border-green-800">
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Leaf className="mr-2 h-5 w-5" />
+              <Card className="dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border-green-800 bg-gradient-to-br from-white to-gray-100 border-green-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <CardHeader className="border-b border-green-200 dark:border-green-800">
+                  <CardTitle className="flex items-center text-xl">
+                    <div className="p-2 bg-green-100 dark:bg-green-900 rounded-full mr-3">
+                      <Leaf className="h-6 w-6 text-green-600 dark:text-green-400" />
+                    </div>
                     Grow Tracking
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>Comprehensive plant management and grow tracking:</p>
-                  <ul className="list-disc list-inside mt-2 space-y-1">
-                    <li className="flex items-center">
-                      <Sprout className="mr-2 h-4 w-4" />
+                  <p className="mb-3">Comprehensive plant management and grow tracking:</p>
+                  <ul className="feature-list space-y-1">
+                    <li>
+                      <Sprout className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Individual plant profiles with strain information
                     </li>
-                    <li className="flex items-center">
-                      <Clock className="mr-2 h-4 w-4" />
+                    <li>
+                      <Clock className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Detailed grow timelines and updates
                     </li>
-                    <li className="flex items-center">
-                      <Droplet className="mr-2 h-4 w-4" />
+                    <li>
+                      <Droplet className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Feeding schedules with water, pH, and EC tracking
                     </li>
-                    <li className="flex items-center">
-                      <Beaker className="mr-2 h-4 w-4" />
+                    <li>
+                      <Beaker className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Fertilizer management with precise measurements
                     </li>
-                    <li className="flex items-center">
-                      <Camera className="mr-2 h-4 w-4" />
+                    <li>
+                      <Camera className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Media uploads for visual growth documentation
                     </li>
                   </ul>
-                  <p className="mt-2">
-                    Monitor every aspect of your plants&apos; lifecycle, from
-                    seed to harvest, ensuring optimal growth and compliance.
+                  <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                    Monitor every aspect of your plants&apos; lifecycle, from seed to harvest, ensuring optimal growth and compliance.
                   </p>
                 </CardContent>
               </Card>
-              <Card className="dark:bg-zinc-800 dark:border-green-800">
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <FileText className="mr-2 h-5 w-5" />
+              <Card className="dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border-green-800 bg-gradient-to-br from-white to-gray-100 border-green-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <CardHeader className="border-b border-green-200 dark:border-green-800">
+                  <CardTitle className="flex items-center text-xl">
+                  <div className="p-2 bg-green-100 dark:bg-green-900 rounded-full mr-3">
+
+                    <FileText className="h-6 w-6 text-green-600 dark:text-green-400" />
+                  </div>
                     Legal Documentation
                   </CardTitle>
                 </CardHeader>
@@ -214,10 +218,10 @@ export default function LandingPage() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="dark:bg-zinc-800 dark:border-green-800">
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <ShieldCheck className="mr-2 h-5 w-5" />
+              <Card className="dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border-green-800 bg-gradient-to-br from-white to-gray-100 border-green-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <CardHeader className="border-b border-green-200 dark:border-green-800">
+                  <CardTitle className="flex items-center text-xl">
+                    <ShieldCheck className="h-6 w-6 text-green-600 dark:text-green-400" />
                     Inventory Management
                   </CardTitle>
                 </CardHeader>
@@ -250,10 +254,10 @@ export default function LandingPage() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="dark:bg-zinc-800 dark:border-green-800">
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Globe className="mr-2 h-5 w-5" />
+              <Card className="dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border-green-800 bg-gradient-to-br from-white to-gray-100 border-green-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <CardHeader className="border-b border-green-200 dark:border-green-800">
+                  <CardTitle className="flex items-center text-xl">
+                    <Globe className="h-6 w-6 text-green-600 dark:text-green-400" />
                     Multi-Client Support
                   </CardTitle>
                 </CardHeader>
@@ -290,10 +294,10 @@ export default function LandingPage() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="dark:bg-zinc-800 dark:border-green-800">
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Languages className="mr-2 h-5 w-5" />
+              <Card className="dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border-green-800 bg-gradient-to-br from-white to-gray-100 border-green-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <CardHeader className="border-b border-green-200 dark:border-green-800">
+                  <CardTitle className="flex items-center text-xl">
+                    <Languages className="h-6 w-6 text-green-600 dark:text-green-400" />
                     Multi-Language
                   </CardTitle>
                 </CardHeader>
