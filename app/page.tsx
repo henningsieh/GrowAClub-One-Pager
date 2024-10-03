@@ -178,133 +178,140 @@ export default function LandingPage() {
               <Card className="dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border-green-800 bg-gradient-to-br from-white to-gray-100 border-green-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <CardHeader className="border-b border-green-200 dark:border-green-800">
                   <CardTitle className="flex items-center text-xl">
-                  <div className="p-2 bg-green-100 dark:bg-green-900 rounded-full mr-3">
-
-                    <FileText className="h-6 w-6 text-green-600 dark:text-green-400" />
-                  </div>
+                    <div className="p-2 bg-green-100 dark:bg-green-900 rounded-full mr-3">
+                      <FileText className="h-6 w-6 text-green-600 dark:text-green-400" />
+                    </div>
                     Legal Documentation
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>
-                    Comprehensive legal compliance management for German
-                    cannabis growing associations:
-                  </p>
-                  <ul className="list-disc list-inside mt-2 space-y-1">
-                    <li className="flex items-center">
-                      <Scale className="mr-2 h-4 w-4" />
+                  <p className="mb-3">Comprehensive legal compliance management for German cannabis growing associations:</p>
+                  <ul className="feature-list space-y-1">
+                    <li>
+                      <Scale className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Cannabis Act (CanG) compliance tracking
                     </li>
-                    <li className="flex items-center">
-                      <Users className="mr-2 h-4 w-4" />
+                    <li>
+                      <Users className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Member registry and distribution logs
                     </li>
-                    <li className="flex items-center">
-                      <BarChart className="mr-2 h-4 w-4" />
+                    <li>
+                      <BarChart className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       THC content and yield reporting
                     </li>
-                    <li className="flex items-center">
-                      <Truck className="mr-2 h-4 w-4" />
+                    <li>
+                      <Truck className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Transport documentation
                     </li>
-                    <li className="flex items-center">
-                      <FileText className="mr-2 h-4 w-4" />
+                    <li>
+                      <FileText className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Automated report generation for authorities
                     </li>
                   </ul>
-                  <p className="mt-2">
-                    Ensure compliance with §26 CanG documentation requirements
-                    and streamline interactions with regulatory bodies.
+                  <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                    Ensure compliance with §26 CanG documentation requirements and streamline interactions with regulatory bodies.
                   </p>
                 </CardContent>
               </Card>
               <Card className="dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border-green-800 bg-gradient-to-br from-white to-gray-100 border-green-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <CardHeader className="border-b border-green-200 dark:border-green-800">
                   <CardTitle className="flex items-center text-xl">
-                    <ShieldCheck className="h-6 w-6 text-green-600 dark:text-green-400" />
+                    <div className="p-2 bg-green-100 dark:bg-green-900 rounded-full mr-3">
+                      <ShieldCheck className="h-6 w-6 text-green-600 dark:text-green-400" />
+                    </div>
                     Inventory Management
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>
-                    Comprehensive inventory tracking for all your cultivation
-                    needs:
-                  </p>
-                  <ul className="list-disc list-inside mt-2 space-y-1">
-                    <li className="flex items-center">
-                      <Box className="mr-2 h-4 w-4" />
+                  <p className="mb-3">Comprehensive inventory tracking for all your cultivation needs:</p>
+                  <ul className="feature-list space-y-1">
+                    <li>
+                      <Box className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       General inventory items
                     </li>
-                    <li className="flex items-center">
-                      <Tent className="mr-2 h-4 w-4" />
+                    <li>
+                      <Tent className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Grow tents (with dimensions)
                     </li>
-                    <li className="flex items-center">
-                      <Lightbulb className="mr-2 h-4 w-4" />
+                    <li>
+                      <Lightbulb className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Lighting equipment (with power specs)
                     </li>
-                    <li className="flex items-center">
-                      <Fan className="mr-2 h-4 w-4" />
+                    <li>
+                      <Fan className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Fans and ventilation
                     </li>
                   </ul>
-                  <p className="mt-2">
-                    Track quantities, specifications, and associate items with
-                    specific grows or owners.
+                  <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                    Track quantities, specifications, and associate items with specific grows or owners.
                   </p>
                 </CardContent>
               </Card>
               <Card className="dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border-green-800 bg-gradient-to-br from-white to-gray-100 border-green-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <CardHeader className="border-b border-green-200 dark:border-green-800">
                   <CardTitle className="flex items-center text-xl">
-                    <Globe className="h-6 w-6 text-green-600 dark:text-green-400" />
+                    <div className="p-2 bg-green-100 dark:bg-green-900 rounded-full mr-3">
+                      <Globe className="h-6 w-6 text-green-600 dark:text-green-400" />
+                    </div>
                     Multi-Client Support
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>
-                    Robust multi-client management for cannabis growing
-                    associations:
-                  </p>
-                  <ul className="list-disc list-inside mt-2 space-y-1">
-                    <li className="flex items-center">
-                      <Building className="mr-2 h-4 w-4" />
+                  <p className="mb-3">Robust multi-client management for cannabis growing associations:</p>
+                  <ul className="feature-list space-y-1">
+                    <li>
+                      <Building className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Manage multiple growing associations
                     </li>
-                    <li className="flex items-center">
-                      <UserPlus className="mr-2 h-4 w-4" />
+                    <li>
+                      <UserPlus className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       User and profile management across associations
                     </li>
-                    <li className="flex items-center">
-                      <MapPin className="mr-2 h-4 w-4" />
-                      Detailed location informations for each association
+                    <li>
+                      <MapPin className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      Detailed location information for each association
                     </li>
-                    <li className="flex items-center">
-                      <Link className="mr-2 h-4 w-4" />
+                    <li>
+                      <Link className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Custom URL support for each association
                     </li>
-                    <li className="flex items-center">
-                      <Users className="mr-2 h-4 w-4" />
+                    <li>
+                      <Users className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Flexible member-association relationships
                     </li>
                   </ul>
-                  <p className="mt-2">
-                    Efficiently manage multiple growing associations, their
-                    members, and locations from a single, unified dashboard.
+                  <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                    Efficiently manage multiple growing associations, their members, and locations from a single, unified dashboard.
                   </p>
                 </CardContent>
               </Card>
               <Card className="dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border-green-800 bg-gradient-to-br from-white to-gray-100 border-green-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <CardHeader className="border-b border-green-200 dark:border-green-800">
                   <CardTitle className="flex items-center text-xl">
-                    <Languages className="h-6 w-6 text-green-600 dark:text-green-400" />
+                    <div className="p-2 bg-green-100 dark:bg-green-900 rounded-full mr-3">
+                      <Languages className="h-6 w-6 text-green-600 dark:text-green-400" />
+                    </div>
                     Multi-Language
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p>
-                    Use GrowAGram in German or English, with more languages
-                    coming soon to support your diverse team.
+                  <p className="mb-3">Language support for diverse teams:</p>
+                  <ul className="feature-list space-y-1">
+                    <li>
+                      <Globe className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      Use GrowAGram in German or English
+                    </li>
+                    <li>
+                      <Languages className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      More languages coming soon
+                    </li>
+                    <li>
+                      <Users className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      Support for diverse teams
+                    </li>
+                  </ul>
+                  <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+                    Enhance collaboration and usability with multi-language support, catering to the diverse needs of your team members.
                   </p>
                 </CardContent>
               </Card>
