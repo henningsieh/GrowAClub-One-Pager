@@ -75,27 +75,27 @@ export default function LandingPage() {
             </div>
           </h1>
           <nav className="flex items-center">
-            <ul className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 md:space-x-6">
-              <li>
+            <ul className="flex flex-col md:flex-row space-y-1 sm:space-y-0 sm:space-x-2">
+              <li className="min-w-24">
                 <a
                   href="#features"
-                  className="block text-sm md:text-base text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className="text-center block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 transition-all duration-300"
                 >
                   Features
                 </a>
               </li>
-              <li>
+              <li className="min-w-24">
                 <a
                   href="#benefits"
-                  className="block text-sm md:text-base text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className="text-center px-3 py-2 block rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 transition-all duration-300"
                 >
                   Benefits
                 </a>
               </li>
-              <li>
+              <li className="min-w-24">
                 <a
                   href="#contact"
-                  className="block text-sm md:text-base text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className=" text-center px-3 py-2 block rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 transition-all duration-300"
                 >
                   Contact
                 </a>
@@ -103,17 +103,17 @@ export default function LandingPage() {
             </ul>
           </nav>
 
-            {/* Dark Mode Toggle Button */}
-            <button
-              onClick={toggleDarkMode}
-              className="ml-4 md:ml-6 p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition duration-300"
-            >
-              {darkMode ? (
-                <Sun className="h-5 w-5 text-yellow-500" />
-              ) : (
-                <Moon className="h-5 w-5 text-gray-800 dark:text-gray-200" />
-              )}
-            </button> 
+          {/* Dark Mode Toggle Button */}
+          <button
+            onClick={toggleDarkMode}
+            className="ml-4 md:ml-6 p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition duration-300"
+          >
+            {darkMode ? (
+              <Sun className="h-5 w-5 text-yellow-500" />
+            ) : (
+              <Moon className="h-5 w-5 text-gray-800 dark:text-gray-200" />
+            )}
+          </button>
         </div>
       </header>
 
@@ -147,7 +147,9 @@ export default function LandingPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="mb-3">Comprehensive plant management and grow tracking:</p>
+                  <p className="mb-3">
+                    Comprehensive plant management and grow tracking:
+                  </p>
                   <ul className="feature-list space-y-1">
                     <li>
                       <Sprout className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
@@ -171,7 +173,8 @@ export default function LandingPage() {
                     </li>
                   </ul>
                   <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
-                    Monitor every aspect of your plants&apos; lifecycle, from seed to harvest, ensuring optimal growth and compliance.
+                    Monitor every aspect of your plants&apos; lifecycle, from
+                    seed to harvest, ensuring optimal growth and compliance.
                   </p>
                 </CardContent>
               </Card>
@@ -185,7 +188,10 @@ export default function LandingPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="mb-3">Comprehensive legal compliance management for German cannabis growing associations:</p>
+                  <p className="mb-3">
+                    Comprehensive legal compliance management for German
+                    cannabis growing associations:
+                  </p>
                   <ul className="feature-list space-y-1">
                     <li>
                       <Scale className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
@@ -209,7 +215,8 @@ export default function LandingPage() {
                     </li>
                   </ul>
                   <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
-                    Ensure compliance with §26 CanG documentation requirements and streamline interactions with regulatory bodies.
+                    Ensure compliance with §26 CanG documentation requirements
+                    and streamline interactions with regulatory bodies.
                   </p>
                 </CardContent>
               </Card>
@@ -223,7 +230,10 @@ export default function LandingPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="mb-3">Comprehensive inventory tracking for all your cultivation needs:</p>
+                  <p className="mb-3">
+                    Comprehensive inventory tracking for all your cultivation
+                    needs:
+                  </p>
                   <ul className="feature-list space-y-1">
                     <li>
                       <Box className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
@@ -243,7 +253,8 @@ export default function LandingPage() {
                     </li>
                   </ul>
                   <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
-                    Track quantities, specifications, and associate items with specific grows or owners.
+                    Track quantities, specifications, and associate items with
+                    specific grows or owners.
                   </p>
                 </CardContent>
               </Card>
@@ -257,7 +268,10 @@ export default function LandingPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="mb-3">Robust multi-client management for cannabis growing associations:</p>
+                  <p className="mb-3">
+                    Robust multi-client management for cannabis growing
+                    associations:
+                  </p>
                   <ul className="feature-list space-y-1">
                     <li>
                       <Building className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
@@ -281,7 +295,8 @@ export default function LandingPage() {
                     </li>
                   </ul>
                   <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
-                    Efficiently manage multiple growing associations, their members, and locations from a single, unified dashboard.
+                    Efficiently manage multiple growing associations, their
+                    members, and locations from a single, unified dashboard.
                   </p>
                 </CardContent>
               </Card>
@@ -311,7 +326,8 @@ export default function LandingPage() {
                     </li>
                   </ul>
                   <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
-                    Enhance collaboration and usability with multi-language support, catering to the diverse needs of your team members.
+                    Enhance collaboration and usability with multi-language
+                    support, catering to the diverse needs of your team members.
                   </p>
                 </CardContent>
               </Card>
