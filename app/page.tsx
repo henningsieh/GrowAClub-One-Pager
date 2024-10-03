@@ -75,11 +75,11 @@ export default function LandingPage() {
             </div>
           </h1>
           <nav className="flex items-center">
-            <ul className="flex space-x-4 md:space-x-6">
+            <ul className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 md:space-x-6">
               <li>
                 <a
                   href="#features"
-                  className="text-sm md:text-base text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className="block text-sm md:text-base text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Features
                 </a>
@@ -87,7 +87,7 @@ export default function LandingPage() {
               <li>
                 <a
                   href="#benefits"
-                  className="text-sm md:text-base text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className="block text-sm md:text-base text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Benefits
                 </a>
@@ -95,12 +95,13 @@ export default function LandingPage() {
               <li>
                 <a
                   href="#contact"
-                  className="text-sm md:text-base text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className="block text-sm md:text-base text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Contact
                 </a>
               </li>
             </ul>
+          </nav>
 
             {/* Dark Mode Toggle Button */}
             <button
@@ -112,8 +113,7 @@ export default function LandingPage() {
               ) : (
                 <Moon className="h-5 w-5 text-gray-800 dark:text-gray-200" />
               )}
-            </button>
-          </nav>
+            </button> 
         </div>
       </header>
 
