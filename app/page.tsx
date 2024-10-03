@@ -63,39 +63,39 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 py-4 px-4 md:px-6 lg:px-8 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-xl font-bold flex items-start">
+      <header className="sticky top-0 z-50 border-b bg-background/95 px-4 py-4 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:px-6 lg:px-8">
+        <div className="container mx-auto flex items-center justify-between">
+          <h1 className="flex items-start text-xl font-bold">
             <Sprout className="mr-2 h-12 w-12 text-green-700 dark:text-green-600" />
             <div>
               <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
                 Cannabis Association Cultivation Manager
               </span>
-              <span className="text-xs mt-1 block">© GrowAGram</span>
+              <span className="mt-1 block text-xs">© GrowAGram</span>
             </div>
           </h1>
           <nav className="flex items-center">
-            <ul className="flex flex-col md:flex-row space-y-1 sm:space-y-0 sm:space-x-2">
-              <li className="min-w-24">
+            <ul className="flex flex-col space-y-1 sm:space-x-2 sm:space-y-0 md:flex-row">
+              <li className="min-w-28">
                 <a
                   href="#features"
-                  className="text-center block px-3 py-2 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 transition-all duration-300"
+                  className="block rounded-md px-3 py-2 text-center text-sm font-bold text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:text-green-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-green-400"
                 >
                   Features
                 </a>
               </li>
-              <li className="min-w-24">
+              <li className="min-w-28">
                 <a
                   href="#benefits"
-                  className="text-center px-3 py-2 block rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 transition-all duration-300"
+                  className="block rounded-md px-3 py-2 text-center text-sm font-bold text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:text-green-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-green-400"
                 >
                   Benefits
                 </a>
               </li>
-              <li className="min-w-24">
+              <li className="min-w-28">
                 <a
                   href="#contact"
-                  className=" text-center px-3 py-2 block rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-green-600 dark:hover:text-green-400 transition-all duration-300"
+                  className="block rounded-md px-3 py-2 text-center text-sm font-bold text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:text-green-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-green-400"
                 >
                   Contact
                 </a>
@@ -106,7 +106,7 @@ export default function LandingPage() {
           {/* Dark Mode Toggle Button */}
           <button
             onClick={toggleDarkMode}
-            className="ml-4 md:ml-6 p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition duration-300"
+            className="ml-4 rounded-full bg-gray-200 p-2 transition duration-300 dark:bg-gray-700 md:ml-6"
           >
             {darkMode ? (
               <Sun className="h-5 w-5 text-yellow-500" />
@@ -118,12 +118,12 @@ export default function LandingPage() {
       </header>
 
       <main>
-        <section className="py-12 px-4 md:px-6 lg:px-8 bg-muted">
+        <section className="bg-muted px-4 py-12 md:px-6 lg:px-8">
           <div className="container mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-4">
+            <h2 className="mb-4 text-4xl font-bold">
               Simplify Cannabis Cultivation Management
             </h2>
-            <p className="text-xl mb-8">
+            <p className="mb-8 text-xl">
               GrowAGram: The all-in-one SaaS solution for cannabis growing
               associations in Germany
             </p>
@@ -131,16 +131,16 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="features" className="py-12 px-4 md:px-6 lg:px-8">
+        <section id="features" className="px-4 py-12 md:px-6 lg:px-8">
           <div className="container mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
+            <h2 className="mb-8 text-center text-3xl font-bold">
               Key Features
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card className="dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border-green-800 bg-gradient-to-br from-white to-gray-100 border-green-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <Card className="border-green-200 bg-gradient-to-br from-white to-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-green-800 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900">
                 <CardHeader className="border-b border-green-200 dark:border-green-800">
                   <CardTitle className="flex items-center text-xl">
-                    <div className="p-2 bg-green-100 dark:bg-green-900 rounded-full mr-3">
+                    <div className="mr-3 rounded-full bg-green-100 p-2 dark:bg-green-900">
                       <Leaf className="h-6 w-6 text-green-600 dark:text-green-400" />
                     </div>
                     Grow Tracking
@@ -178,10 +178,10 @@ export default function LandingPage() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border-green-800 bg-gradient-to-br from-white to-gray-100 border-green-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <Card className="border-green-200 bg-gradient-to-br from-white to-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-green-800 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900">
                 <CardHeader className="border-b border-green-200 dark:border-green-800">
                   <CardTitle className="flex items-center text-xl">
-                    <div className="p-2 bg-green-100 dark:bg-green-900 rounded-full mr-3">
+                    <div className="mr-3 rounded-full bg-green-100 p-2 dark:bg-green-900">
                       <FileText className="h-6 w-6 text-green-600 dark:text-green-400" />
                     </div>
                     Legal Documentation
@@ -220,10 +220,10 @@ export default function LandingPage() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border-green-800 bg-gradient-to-br from-white to-gray-100 border-green-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <Card className="border-green-200 bg-gradient-to-br from-white to-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-green-800 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900">
                 <CardHeader className="border-b border-green-200 dark:border-green-800">
                   <CardTitle className="flex items-center text-xl">
-                    <div className="p-2 bg-green-100 dark:bg-green-900 rounded-full mr-3">
+                    <div className="mr-3 rounded-full bg-green-100 p-2 dark:bg-green-900">
                       <ShieldCheck className="h-6 w-6 text-green-600 dark:text-green-400" />
                     </div>
                     Inventory Management
@@ -258,10 +258,10 @@ export default function LandingPage() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border-green-800 bg-gradient-to-br from-white to-gray-100 border-green-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <Card className="border-green-200 bg-gradient-to-br from-white to-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-green-800 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900">
                 <CardHeader className="border-b border-green-200 dark:border-green-800">
                   <CardTitle className="flex items-center text-xl">
-                    <div className="p-2 bg-green-100 dark:bg-green-900 rounded-full mr-3">
+                    <div className="mr-3 rounded-full bg-green-100 p-2 dark:bg-green-900">
                       <Globe className="h-6 w-6 text-green-600 dark:text-green-400" />
                     </div>
                     Multi-Client Support
@@ -300,10 +300,10 @@ export default function LandingPage() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900 dark:border-green-800 bg-gradient-to-br from-white to-gray-100 border-green-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <Card className="border-green-200 bg-gradient-to-br from-white to-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-green-800 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900">
                 <CardHeader className="border-b border-green-200 dark:border-green-800">
                   <CardTitle className="flex items-center text-xl">
-                    <div className="p-2 bg-green-100 dark:bg-green-900 rounded-full mr-3">
+                    <div className="mr-3 rounded-full bg-green-100 p-2 dark:bg-green-900">
                       <Languages className="h-6 w-6 text-green-600 dark:text-green-400" />
                     </div>
                     Multi-Language
@@ -335,15 +335,15 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="benefits" className="py-12 px-4 md:px-6 lg:px-8 bg-muted">
+        <section id="benefits" className="bg-muted px-4 py-12 md:px-6 lg:px-8">
           <div className="container mx-auto">
-            <h2 className="text-4xl font-bold mb-8 text-center">Benefits</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <h2 className="mb-8 text-center text-4xl font-bold">Benefits</h2>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <div>
-                <h3 className="text-xl font-semibold mb-2">
+                <h3 className="mb-2 text-xl font-semibold">
                   For Growing Associations
                 </h3>
-                <ul className="list-disc list-inside space-y-2">
+                <ul className="list-inside list-disc space-y-2">
                   <li className="text-lg">
                     Ensure compliance with German cannabis laws
                   </li>
@@ -357,8 +357,8 @@ export default function LandingPage() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold mb-2">For Members</h3>
-                <ul className="list-disc list-inside space-y-2">
+                <h3 className="mb-2 text-xl font-semibold">For Members</h3>
+                <ul className="list-inside list-disc space-y-2">
                   <li className="text-lg">
                     Access to high-quality, legally grown cannabis
                   </li>
@@ -375,12 +375,12 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="contact" className="py-12 px-4 md:px-6 lg:px-8">
+        <section id="contact" className="px-4 py-12 md:px-6 lg:px-8">
           <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">
+            <h2 className="mb-4 text-3xl font-bold">
               Ready to Grow with Confidence?
             </h2>
-            <p className="text-xl mb-8">
+            <p className="mb-8 text-xl">
               Contact us today to learn how GrowAGram can help your cannabis
               growing association thrive.
             </p>
@@ -389,7 +389,7 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="py-6 px-4 md:px-6 lg:px-8 border-t bg-white dark:bg-gray-800">
+      <footer className="border-t bg-white px-4 py-6 dark:bg-gray-800 md:px-6 lg:px-8">
         <div className="container mx-auto text-center text-sm text-muted-foreground dark:text-gray-400">
           <p>&copy; 2023 GrowAGram. All rights reserved.</p>
           <p className="mt-2">
