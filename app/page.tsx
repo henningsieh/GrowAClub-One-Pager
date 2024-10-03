@@ -131,7 +131,10 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="features" className="px-4 py-12 md:px-6 lg:px-8">
+        <section
+          id="features"
+          className="scroll-mt-32 px-4 py-12 md:px-6 lg:px-8"
+        >
           <div className="container mx-auto">
             <h2 className="mb-8 text-center text-3xl font-bold">
               Key Features
@@ -335,7 +338,10 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="benefits" className="bg-muted px-4 py-12 md:px-6 lg:px-8">
+        <section
+          id="benefits"
+          className="scroll-mt-40 bg-muted px-4 py-8 md:px-6 lg:px-8"
+        >
           <div className="container mx-auto">
             <h2 className="mb-8 text-center text-4xl font-bold">Benefits</h2>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
