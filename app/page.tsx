@@ -150,23 +150,23 @@ export default function LandingPage() {
                   <p className="mb-3">Comprehensive plant management and grow tracking:</p>
                   <ul className="feature-list space-y-1">
                     <li>
-                      <Sprout className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Sprout className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Individual plant profiles with strain information
                     </li>
                     <li>
-                      <Clock className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Clock className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Detailed grow timelines and updates
                     </li>
                     <li>
-                      <Droplet className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Droplet className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Feeding schedules with water, pH, and EC tracking
                     </li>
                     <li>
-                      <Beaker className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Beaker className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Fertilizer management with precise measurements
                     </li>
                     <li>
-                      <Camera className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Camera className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Media uploads for visual growth documentation
                     </li>
                   </ul>
@@ -188,23 +188,23 @@ export default function LandingPage() {
                   <p className="mb-3">Comprehensive legal compliance management for German cannabis growing associations:</p>
                   <ul className="feature-list space-y-1">
                     <li>
-                      <Scale className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Scale className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Cannabis Act (CanG) compliance tracking
                     </li>
                     <li>
-                      <Users className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Users className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Member registry and distribution logs
                     </li>
                     <li>
-                      <BarChart className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <BarChart className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       THC content and yield reporting
                     </li>
                     <li>
-                      <Truck className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Truck className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Transport documentation
                     </li>
                     <li>
-                      <FileText className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <FileText className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Automated report generation for authorities
                     </li>
                   </ul>
@@ -226,19 +226,19 @@ export default function LandingPage() {
                   <p className="mb-3">Comprehensive inventory tracking for all your cultivation needs:</p>
                   <ul className="feature-list space-y-1">
                     <li>
-                      <Box className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Box className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       General inventory items
                     </li>
                     <li>
-                      <Tent className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Tent className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Grow tents (with dimensions)
                     </li>
                     <li>
-                      <Lightbulb className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Lightbulb className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Lighting equipment (with power specs)
                     </li>
                     <li>
-                      <Fan className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Fan className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Fans and ventilation
                     </li>
                   </ul>
@@ -260,23 +260,23 @@ export default function LandingPage() {
                   <p className="mb-3">Robust multi-client management for cannabis growing associations:</p>
                   <ul className="feature-list space-y-1">
                     <li>
-                      <Building className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Building className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Manage multiple growing associations
                     </li>
                     <li>
-                      <UserPlus className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <UserPlus className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       User and profile management across associations
                     </li>
                     <li>
-                      <MapPin className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <MapPin className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Detailed location information for each association
                     </li>
                     <li>
-                      <Link className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Link className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Custom URL support for each association
                     </li>
                     <li>
-                      <Users className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Users className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Flexible member-association relationships
                     </li>
                   </ul>
@@ -298,15 +298,15 @@ export default function LandingPage() {
                   <p className="mb-3">Language support for diverse teams:</p>
                   <ul className="feature-list space-y-1">
                     <li>
-                      <Globe className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Globe className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Use GrowAGram in German or English
                     </li>
                     <li>
-                      <Languages className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Languages className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       More languages coming soon
                     </li>
                     <li>
-                      <Users className="mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
+                      <Users className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
                       Support for diverse teams
                     </li>
                   </ul>
