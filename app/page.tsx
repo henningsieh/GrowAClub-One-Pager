@@ -63,23 +63,23 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="py-6 px-4 md:px-6 lg:px-8 border-b ">
+      <header className="sticky top-0 z-50 py-4 px-4 md:px-6 lg:px-8 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto flex justify-between items-center">
           <h1 className="text-xl font-bold flex items-start">
-            <Sprout className="mr-2 h-16 w-16 text-green-700 dark:text-green-600" />
+            <Sprout className="mr-2 h-12 w-12 text-green-700 dark:text-green-600" />
             <div>
-              <span className="text-base sm:text-base md:text-base lg:text-2xl xl:text-3xl 2xl:text-3xl">
+              <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
                 Cannabis Association Cultivation Manager
               </span>
-              <span className="text-sm mt-1 block">© GrowAGram</span>
+              <span className="text-xs mt-1 block">© GrowAGram</span>
             </div>
           </h1>
           <nav className="flex items-center">
-            <ul className="flex space-x-6">
+            <ul className="flex space-x-4 md:space-x-6">
               <li>
                 <a
                   href="#features"
-                  className="text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className="text-sm md:text-base text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Features
                 </a>
@@ -87,7 +87,7 @@ export default function LandingPage() {
               <li>
                 <a
                   href="#benefits"
-                  className="text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className="text-sm md:text-base text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Benefits
                 </a>
@@ -95,7 +95,7 @@ export default function LandingPage() {
               <li>
                 <a
                   href="#contact"
-                  className="text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
+                  className="text-sm md:text-base text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-600 hover:underline underline-offset-4 decoration-2 transition-all duration-300 ease-in-out"
                 >
                   Contact
                 </a>
@@ -105,7 +105,7 @@ export default function LandingPage() {
             {/* Dark Mode Toggle Button */}
             <button
               onClick={toggleDarkMode}
-              className="ml-6 p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition duration-300"
+              className="ml-4 md:ml-6 p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition duration-300"
             >
               {darkMode ? (
                 <Sun className="h-5 w-5 text-yellow-500" />
