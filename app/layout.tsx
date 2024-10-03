@@ -12,13 +12,12 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
- 
+
 export const metadata: Metadata = {
   title: "Cannabis Association Cultivation Manager | by GrowAGram",
-  description: "GrowaGram is a comprehensive SaaS platform for cannabis growing associations in Germany, supporting legal documentation and reporting requirements. Manage grows, plants, feedings, and inventories while ensuring compliance with German law. Multi-client, multilingual, and tailored to cannabis cultivation environments, GrowaGram simplifies tracking and reporting for associations.",
+  description:
+    "GrowaGram is a comprehensive SaaS platform for cannabis growing associations in Germany, supporting legal documentation and reporting requirements. Manage grows, plants, feedings, and inventories while ensuring compliance with German law. Multi-client, multilingual, and tailored to cannabis cultivation environments, GrowaGram simplifies tracking and reporting for associations.",
 };
-
-
 
 export default function RootLayout({
   children,
