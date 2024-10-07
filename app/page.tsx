@@ -69,9 +69,9 @@ export default function LandingPage() {
             <Sprout className="mr-2 h-12 w-12 text-green-700 dark:text-green-600" />
             <div>
               <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-                Cannabis Association Cultivation Manager
+                GrowAClub
               </span>
-              <span className="mt-1 block text-xs">© GrowAGram</span>
+              <span className="mt-1 block text-xs">© Growers.land</span>
             </div>
           </h1>
           <nav className="flex items-center">
@@ -121,13 +121,13 @@ export default function LandingPage() {
         <section className="bg-muted px-4 py-12 md:px-6 lg:px-8">
           <div className="container mx-auto text-center">
             <h2 className="mb-4 text-4xl font-bold">
-              Simplify Cannabis Cultivation Management
+              Rechtskonforme Dokumentation des Cannabisanbaus
             </h2>
             <p className="mb-8 text-xl">
-              GrowAGram: The all-in-one SaaS solution for cannabis growing
-              associations in Germany
+              GrowAClub: Die All-in-One Cloud-Lösung für den legalen Betrieb
+              eines Cannabis-Anbauvereins in Deutschland
             </p>
-            <Button size="lg">Get Started</Button>
+            <Button size="lg">JETZT ANMELDEN</Button>
           </div>
         </section>
 
