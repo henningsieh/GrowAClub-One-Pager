@@ -1,410 +1,225 @@
-// app/page.tsx
-"use client"; // This ensures the component is rendered on the client side
+"use client"
 
-import React, { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Sun,
-  Moon,
-  Sprout,
-  FileText,
-  ShieldCheck,
-  Globe,
-  Languages,
-  Leaf,
-  Box,
-  Lightbulb,
-  Fan,
-  Tent,
-  Camera,
-  Droplet,
-  Beaker,
-  Clock,
-  Scale,
-  Users,
-  Truck,
-  BarChart,
-  Building,
-  UserPlus,
-  MapPin,
-  Link,
-} from "lucide-react";
+import React, { useEffect } from 'react'
+import Link from 'next/link'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Shield, Clock, Handshake, Mountain } from "lucide-react"
 
 export default function LandingPage() {
-  const [darkMode, setDarkMode] = useState(false);
-
   useEffect(() => {
-    // Check if dark mode is already enabled in localStorage or system preference
-    const isDark =
-      localStorage.getItem("theme") === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-      setDarkMode(true);
-    } else {
-      document.documentElement.classList.remove("dark");
-      setDarkMode(false);
+    const handleScroll = (e: Event) => {
+      e.preventDefault()
+      const target = e.target as HTMLAnchorElement
+      const id = target.getAttribute('href')?.slice(1)
+      if (id) {
+        const element = document.getElementById(id)
+        if (element) {
+          element.scrollIntoView({
+            behavior: 'smooth'
+          })
+        }
+      }
     }
-  }, []);
 
-  const toggleDarkMode = () => {
-    if (darkMode) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
+    const links = document.querySelectorAll('a[href^="#"]')
+    links.forEach(link => {
+      link.addEventListener('click', handleScroll)
+    })
+
+    return () => {
+      links.forEach(link => {
+        link.removeEventListener('click', handleScroll)
+      })
     }
-    setDarkMode(!darkMode);
-  };
+  }, [])
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-50 border-b bg-background/95 px-4 py-4 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:px-6 lg:px-8">
-        <div className="container mx-auto flex items-center justify-between">
-          <h1 className="flex items-start text-xl font-bold">
-            <Sprout className="mr-2 h-12 w-12 text-green-700 dark:text-green-600" />
-            <div>
-              <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl">
-                GrowAClub
-              </span>
-              <span className="mt-1 block text-xs">© Growers.land</span>
-            </div>
-          </h1>
-          <nav className="flex items-center">
-            <ul className="flex flex-col space-y-1 sm:space-x-2 sm:space-y-0 md:flex-row">
-              <li className="min-w-28">
-                <a
-                  href="#features"
-                  className="block rounded-md px-3 py-2 text-center text-sm font-bold text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:text-green-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-green-400"
-                >
-                  Features
-                </a>
-              </li>
-              <li className="min-w-28">
-                <a
-                  href="#benefits"
-                  className="block rounded-md px-3 py-2 text-center text-sm font-bold text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:text-green-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-green-400"
-                >
-                  Benefits
-                </a>
-              </li>
-              <li className="min-w-28">
-                <a
-                  href="#contact"
-                  className="block rounded-md px-3 py-2 text-center text-sm font-bold text-gray-700 transition-all duration-300 hover:bg-gray-100 hover:text-green-600 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-green-400"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
+    <div className="flex flex-col min-h-screen">
+      <header className="px-4 lg:px-6 h-14 flex items-center justify-center fixed w-full bg-background z-10">
+        <div className="w-full max-w-6xl flex justify-between items-center">
+          <Link className="flex items-center justify-center" href="#">
+            <Mountain className="h-6 w-6" />
+            <span className="sr-only">GrowAClub</span>
+          </Link>
+          <nav className="flex gap-4 sm:gap-6">
+            <Link className="text-sm font-medium hover:underline underline-offset-4" href="#features">
+              Features
+            </Link>
+            <Link className="text-sm font-medium hover:underline underline-offset-4" href="#benefits">
+              Benefits
+            </Link>
+            <Link className="text-sm font-medium hover:underline underline-offset-4" href="#guarantees">
+              Guarantees
+            </Link>
           </nav>
-
-          {/* Dark Mode Toggle Button */}
-          <button
-            onClick={toggleDarkMode}
-            className="ml-4 rounded-full bg-gray-200 p-2 transition duration-300 dark:bg-gray-700 md:ml-6"
-          >
-            {darkMode ? (
-              <Sun className="h-5 w-5 text-yellow-500" />
-            ) : (
-              <Moon className="h-5 w-5 text-gray-800 dark:text-gray-200" />
-            )}
-          </button>
         </div>
       </header>
-
-      <main>
-        <section className="bg-muted px-4 py-12 md:px-6 lg:px-8">
-          <div className="container mx-auto text-center">
-            <h2 className="mb-4 text-4xl font-bold">
-              Rechtskonforme Dokumentation des Cannabisanbaus
-            </h2>
-            <p className="mb-8 text-xl">
-              GrowAClub: Die All-in-One Cloud-Lösung für den legalen Betrieb
-              eines Cannabis-Anbauvereins in Deutschland
-            </p>
-            <Button size="lg">JETZT ANMELDEN</Button>
+      <main className="flex-1 pt-14">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                  Simplify CanG Compliance with GrowAClub
+                </h1>
+                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+                  Streamline documentation and reporting for Cannabisanbauvereine under the new Cannabis Act
+                </p>
+              </div>
+              <div className="space-x-4">
+                <Button>Get Started</Button>
+                <Button variant="outline">Learn More</Button>
+              </div>
+            </div>
           </div>
         </section>
-
-        <section
-          id="features"
-          className="scroll-mt-32 px-4 py-12 md:px-6 lg:px-8"
-        >
-          <div className="container mx-auto">
-            <h2 className="mb-8 text-center text-3xl font-bold">
-              Key Features
-            </h2>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="border-green-200 bg-gradient-to-br from-white to-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-green-800 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900">
-                <CardHeader className="border-b border-green-200 dark:border-green-800">
-                  <CardTitle className="flex items-center text-xl">
-                    <div className="mr-3 rounded-full bg-green-100 p-2 dark:bg-green-900">
-                      <Leaf className="h-6 w-6 text-green-600 dark:text-green-400" />
-                    </div>
-                    Grow Tracking
-                  </CardTitle>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800" id="features">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Key Features</h2>
+            <Tabs defaultValue="documentation" className="w-full">
+              <div className="max-w-3xl mx-auto">
+                <TabsList className="w-full grid grid-cols-3">
+                  <TabsTrigger value="documentation" className="w-full">Documentation</TabsTrigger>
+                  <TabsTrigger value="reporting" className="w-full">Reporting</TabsTrigger>
+                  <TabsTrigger value="compliance" className="w-full">Compliance</TabsTrigger>
+                </TabsList>
+              </div>
+              <div className="mt-6 max-w-3xl mx-auto">
+                <TabsContent value="documentation">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Detailed Documentation</CardTitle>
+                      <CardDescription>Comprehensive tracking of cannabis and propagating material</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                      <p>• Record member information and transactions</p>
+                      <p>• Track quantities of cannabis and propagating material</p>
+                      <p>• Document cultivation, transfer, and destruction</p>
+                      <p>• Store records securely for 5 years</p>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+                <TabsContent value="reporting">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Automated Reporting</CardTitle>
+                      <CardDescription>Effortless generation and submission of required reports</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                      <p>• Manual trigger for on-demand reports</p>
+                      <p>• Automatic annual submission by January 31st</p>
+                      <p>• Detailed breakdowns by cannabis variety, THC, and CBD content</p>
+                      <p>• Anonymized electronic transmission to authorities</p>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+                <TabsContent value="compliance">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Compliance Assurance</CardTitle>
+                      <CardDescription>Stay aligned with CanG regulations effortlessly</CardDescription>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                      <p>• Built-in forms and processes aligned with Section 26</p>
+                      <p>• Real-time updates to reflect regulatory changes</p>
+                      <p>• Guidance on proper documentation practices</p>
+                      <p>• Alerts for upcoming reporting deadlines</p>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+              </div>
+            </Tabs>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32" id="benefits">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Benefits for Operators</h2>
+            <div className="grid gap-6 lg:grid-cols-3">
+              <Card>
+                <CardHeader>
+                  <Shield className="w-10 h-10 mb-2 mx-auto" />
+                  <CardTitle className="text-center">Regulatory Confidence</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="mb-3">
-                    Comprehensive plant management and grow tracking:
-                  </p>
-                  <ul className="feature-list space-y-1">
-                    <li>
-                      <Sprout className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Individual plant profiles with strain information
-                    </li>
-                    <li>
-                      <Clock className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Detailed grow timelines and updates
-                    </li>
-                    <li>
-                      <Droplet className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Feeding schedules with water, pH, and EC tracking
-                    </li>
-                    <li>
-                      <Beaker className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Fertilizer management with precise measurements
-                    </li>
-                    <li>
-                      <Camera className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Media uploads for visual growth documentation
-                    </li>
-                  </ul>
-                  <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
-                    Monitor every aspect of your plants&apos; lifecycle, from
-                    seed to harvest, ensuring optimal growth and compliance.
-                  </p>
+                <CardContent className="text-center">
+                  Eliminate uncertainty in dealing with authorities and regulations, ensuring your club stays compliant.
                 </CardContent>
               </Card>
-              <Card className="border-green-200 bg-gradient-to-br from-white to-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-green-800 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900">
-                <CardHeader className="border-b border-green-200 dark:border-green-800">
-                  <CardTitle className="flex items-center text-xl">
-                    <div className="mr-3 rounded-full bg-green-100 p-2 dark:bg-green-900">
-                      <FileText className="h-6 w-6 text-green-600 dark:text-green-400" />
-                    </div>
-                    Legal Documentation
-                  </CardTitle>
+              <Card>
+                <CardHeader>
+                  <Clock className="w-10 h-10 mb-2 mx-auto" />
+                  <CardTitle className="text-center">Time Savings</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="mb-3">
-                    Comprehensive legal compliance management for German
-                    cannabis growing associations:
-                  </p>
-                  <ul className="feature-list space-y-1">
-                    <li>
-                      <Scale className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Cannabis Act (CanG) compliance tracking
-                    </li>
-                    <li>
-                      <Users className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Member registry and distribution logs
-                    </li>
-                    <li>
-                      <BarChart className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      THC content and yield reporting
-                    </li>
-                    <li>
-                      <Truck className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Transport documentation
-                    </li>
-                    <li>
-                      <FileText className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Automated report generation for authorities
-                    </li>
-                  </ul>
-                  <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
-                    Ensure compliance with §26 CanG documentation requirements
-                    and streamline interactions with regulatory bodies.
-                  </p>
+                <CardContent className="text-center">
+                  Save valuable time compared to setting up and maintaining your own documentation system.
                 </CardContent>
               </Card>
-              <Card className="border-green-200 bg-gradient-to-br from-white to-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-green-800 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900">
-                <CardHeader className="border-b border-green-200 dark:border-green-800">
-                  <CardTitle className="flex items-center text-xl">
-                    <div className="mr-3 rounded-full bg-green-100 p-2 dark:bg-green-900">
-                      <ShieldCheck className="h-6 w-6 text-green-600 dark:text-green-400" />
-                    </div>
-                    Inventory Management
-                  </CardTitle>
+              <Card>
+                <CardHeader>
+                  <Handshake className="w-10 h-10 mb-2 mx-auto" />
+                  <CardTitle className="text-center">Trusted Partnership</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="mb-3">
-                    Comprehensive inventory tracking for all your cultivation
-                    needs:
-                  </p>
-                  <ul className="feature-list space-y-1">
-                    <li>
-                      <Box className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      General inventory items
-                    </li>
-                    <li>
-                      <Tent className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Grow tents (with dimensions)
-                    </li>
-                    <li>
-                      <Lightbulb className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Lighting equipment (with power specs)
-                    </li>
-                    <li>
-                      <Fan className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Fans and ventilation
-                    </li>
-                  </ul>
-                  <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
-                    Track quantities, specifications, and associate items with
-                    specific grows or owners.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-green-200 bg-gradient-to-br from-white to-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-green-800 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900">
-                <CardHeader className="border-b border-green-200 dark:border-green-800">
-                  <CardTitle className="flex items-center text-xl">
-                    <div className="mr-3 rounded-full bg-green-100 p-2 dark:bg-green-900">
-                      <Globe className="h-6 w-6 text-green-600 dark:text-green-400" />
-                    </div>
-                    Multi-Client Support
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="mb-3">
-                    Robust multi-client management for cannabis growing
-                    associations:
-                  </p>
-                  <ul className="feature-list space-y-1">
-                    <li>
-                      <Building className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Manage multiple growing associations
-                    </li>
-                    <li>
-                      <UserPlus className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      User and profile management across associations
-                    </li>
-                    <li>
-                      <MapPin className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Detailed location information for each association
-                    </li>
-                    <li>
-                      <Link className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Custom URL support for each association
-                    </li>
-                    <li>
-                      <Users className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Flexible member-association relationships
-                    </li>
-                  </ul>
-                  <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
-                    Efficiently manage multiple growing associations, their
-                    members, and locations from a single, unified dashboard.
-                  </p>
-                </CardContent>
-              </Card>
-              <Card className="border-green-200 bg-gradient-to-br from-white to-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:border-green-800 dark:bg-gradient-to-br dark:from-zinc-800 dark:to-zinc-900">
-                <CardHeader className="border-b border-green-200 dark:border-green-800">
-                  <CardTitle className="flex items-center text-xl">
-                    <div className="mr-3 rounded-full bg-green-100 p-2 dark:bg-green-900">
-                      <Languages className="h-6 w-6 text-green-600 dark:text-green-400" />
-                    </div>
-                    Multi-Language
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="mb-3">Language support for diverse teams:</p>
-                  <ul className="feature-list space-y-1">
-                    <li>
-                      <Globe className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Use GrowAGram in German or English
-                    </li>
-                    <li>
-                      <Languages className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      More languages coming soon
-                    </li>
-                    <li>
-                      <Users className="ml-1 mr-2 h-4 w-4 text-green-600 dark:text-green-400" />
-                      Support for diverse teams
-                    </li>
-                  </ul>
-                  <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
-                    Enhance collaboration and usability with multi-language
-                    support, catering to the diverse needs of your team members.
-                  </p>
+                <CardContent className="text-center">
+                  Enjoy direct, eye-level cooperation with a software provider committed to your success.
                 </CardContent>
               </Card>
             </div>
           </div>
         </section>
-
-        <section
-          id="benefits"
-          className="scroll-mt-40 bg-muted px-4 py-8 md:px-6 lg:px-8"
-        >
-          <div className="container mx-auto">
-            <h2 className="mb-8 text-center text-4xl font-bold">Benefits</h2>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <div>
-                <h3 className="mb-2 text-xl font-semibold">
-                  For Growing Associations
-                </h3>
-                <ul className="list-inside list-disc space-y-2">
-                  <li className="text-lg">
-                    Ensure compliance with German cannabis laws
-                  </li>
-                  <li className="text-lg">
-                    Streamline documentation processes
-                  </li>
-                  <li className="text-lg">Reduce administrative overhead</li>
-                  <li className="text-lg">
-                    Improve yield and quality through data-driven insights
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="mb-2 text-xl font-semibold">For Members</h3>
-                <ul className="list-inside list-disc space-y-2">
-                  <li className="text-lg">
-                    Access to high-quality, legally grown cannabis
-                  </li>
-                  <li className="text-lg">
-                    Transparency in cultivation practices
-                  </li>
-                  <li className="text-lg">Consistent supply management</li>
-                  <li className="text-lg">
-                    Educational resources on responsible use
-                  </li>
-                </ul>
-              </div>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800" id="guarantees">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Our Guarantees</h2>
+            <div className="grid gap-6 lg:grid-cols-2 max-w-3xl mx-auto">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-center">Data Security</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  Server infrastructure in Germany. No personal member data stored in cloud storage abroad.
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-center">Rapid Adaptability</CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  Swift software updates to align with changes in statutory documentation and reporting obligations.
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
-
-        <section id="contact" className="px-4 py-12 md:px-6 lg:px-8">
-          <div className="container mx-auto text-center">
-            <h2 className="mb-4 text-3xl font-bold">
-              Ready to Grow with Confidence?
-            </h2>
-            <p className="mb-8 text-xl">
-              Contact us today to learn how GrowAGram can help your cannabis
-              growing association thrive.
-            </p>
-            <Button size="lg">Contact Us</Button>
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Ready to Simplify Your Compliance?</h2>
+                <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
+                  Join GrowAClub today and experience hassle-free CanG compliance for your Cannabisanbauverein.
+                </p>
+              </div>
+              <div className="space-x-4">
+                <Button>Sign Up Now</Button>
+                <Button variant="outline">Request a Demo</Button>
+              </div>
+            </div>
           </div>
         </section>
       </main>
-
-      <footer className="border-t bg-white px-4 py-6 dark:bg-gray-800 md:px-6 lg:px-8">
-        <div className="container mx-auto text-center text-sm text-muted-foreground dark:text-gray-400">
-          <p>&copy; 2023 GrowAGram. All rights reserved.</p>
-          <p className="mt-2">
-            GrowAGram is designed to assist cannabis growing associations in
-            complying with German laws. Always consult with legal professionals
-            for specific compliance requirements.
-          </p>
+      <footer className="w-full py-6 border-t">
+        <div className="container px-4 md:px-6 max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 GrowAClub. All rights reserved.</p>
+          <nav className="flex gap-4 sm:gap-6 mt-4 sm:mt-0">
+            <Link className="text-xs hover:underline underline-offset-4" href="#">
+              Terms of Service
+            </Link>
+            <Link className="text-xs hover:underline underline-offset-4" href="#">
+              Privacy
+            </Link>
+          </nav>
         </div>
       </footer>
     </div>
-  );
+  )
 }
