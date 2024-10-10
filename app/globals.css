@@ -41,7 +41,7 @@ body {
     --radius: 0.5rem;
   }
   .dark {
-    --background: 240 10% 3.9%;
+    --background: 0 0% 8%;
     --foreground: 0 0% 98%;
     --card: 240 10% 3.9%;
     --card-foreground: 0 0% 98%;
@@ -82,6 +82,10 @@ body {
     @apply flex items-center py-1;
   }
   .feature-list li:hover {
-    @apply bg-green-400/40 dark:bg-green-800/40 rounded-sm transition-colors duration-300;
+    @apply rounded-sm bg-green-400/40 transition-colors duration-300 dark:bg-green-800/40;
   }
+}
+
+.text-gold {
+  color: #ca8a04; /* or any specific gold color code */
 }
