@@ -19,11 +19,14 @@ import {
   Sun,
   Scale,
   HandCoins,
+  MenuIcon,
+  XIcon
 } from "lucide-react";
 import Image from "next/image";
 
 export default function LandingPage() {
   const [darkMode, setDarkMode] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
@@ -59,33 +62,52 @@ export default function LandingPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <div id="top"></div> {/* Add this at the very top of your page */}
       <header
         className={`fixed z-10 flex h-14 w-full items-center justify-center bg-transparent px-4 backdrop-blur-md lg:px-6 ${darkMode ? "bg-gray-800" : "bg-white"}`}
       >
         <div className="flex w-full max-w-6xl items-center justify-between">
-          <Link className="flex items-center justify-center" href="#top">
-            {/* <Mountain className="h-6 w-6" /> */}
-            <Image src="GrowAClub_logo.png" alt="App Logo" className="h-12 w-12" width={48} height={48} />
+          <Link className="flex items-center justify-center" href="/" onClick={(event) => {
+              event.preventDefault(); // Prevent default link behavior
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}>
+            {/* Added onClick to handle smooth scroll */}
+            <Image
+              src="GrowAClub_logo.png"
+              alt="App Logo"
+              className="h-8 w-8"
+              width={32}
+              height={32}
+            />
             <span className="sr-only">GrowAClub</span>
           </Link>
-          <nav className="flex justify-center gap-2 sm:gap-4">
-            {" "}
-            {/* Center the nav links */}
+          
+          {/* Mobile Burger Menu */}
+          <button
+            className="flex items-center md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)} // Toggle mobile menu
+          >
+            {mobileMenuOpen ? (
+              <XIcon className="h-6 w-6 text-stone-800 dark:text-stone-200" /> // Show XIcon when mobileMenuOpen is true
+            ) : (
+              <MenuIcon className="h-6 w-6 text-stone-800 dark:text-stone-200" /> // Show MenuIcon when mobileMenuOpen is false
+            )}
+          </button>
+          {/* Desktop Navigation */}
+          <nav className="hidden justify-center gap-2 sm:gap-4 md:flex">
             <Link
-              className="text-sm font-medium text-gray-800 dark:text-gray-200 border border-green-400 dark:border-yellow-600 hover:bg-gray-100 dark:hover:bg-stone-800 rounded-md px-4 py-2 transition-colors duration-200"
+              className="rounded-md border border-green-400 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
               href="#features"
             >
               Funktionen
             </Link>
             <Link
-              className="text-sm font-medium text-gray-800 dark:text-gray-200 border border-green-400 dark:border-yellow-600 hover:bg-gray-100 dark:hover:bg-stone-800 rounded-md px-4 py-2 transition-colors duration-200"
+              className="rounded-md border border-green-400 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
               href="#benefits"
             >
               Vorteile
             </Link>
             <Link
-              className="text-sm font-medium text-gray-800 dark:text-gray-200 border border-green-400 dark:border-yellow-600 hover:bg-gray-100 dark:hover:bg-stone-800 rounded-md px-4 py-2 transition-colors duration-200"
+              className="rounded-md border border-green-400 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
               href="#guarantees"
             >
               Garantie
@@ -103,34 +125,70 @@ export default function LandingPage() {
           </button>
         </div>
       </header>
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <nav className="fixed left-0 top-14 w-full bg-white shadow-md dark:bg-stone-800 md:hidden">
+          <Link
+            className="block border-b border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 dark:border-gray-700 dark:text-gray-200"
+            href="#features"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Funktionen
+          </Link>
+          <Link
+            className="block border-b border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 dark:border-gray-700 dark:text-gray-200"
+            href="#benefits"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Vorteile
+          </Link>
+          <Link
+            className="block border-b border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 dark:border-gray-700 dark:text-gray-200"
+            href="#guarantees"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Garantie
+          </Link>
+        </nav>
+      )}
       <main className="flex-1 pt-14">
-        <section className="w-full py-12 md:py-16 lg:py-24">
+        <section className="w-full py-14 md:py-16 lg:py-24">
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
             <div className="flex flex-col items-center space-y-10 text-center">
               <div className="space-y-2">
-                <h1 className="font-bold tracking-tighter text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+                <h1 className="text-xl font-bold tracking-tighter sm:text-2xl md:text-3xl lg:text-4xl">
                   CanG konform mit
                 </h1>
 
-                <h2 className="pt-2 font-bold tracking-tighter text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+                <h2 className="pt-2 text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                   <span className="text-green-700 dark:text-yellow-500">
                     GrowAClub
                   </span>
                 </h2>
 
                 <p className="mx-auto max-w-[700px] text-gray-700 dark:text-gray-300 md:text-lg">
-                  Die maßgeschneiderte Softwarelösung für Cannabisanbauvereine. Optimieren Sie Ihre Dokumentations- und Berichtspflichten gemäß dem neuen Cannabisgesetz (CanG).
+                  Die maßgeschneiderte Softwarelösung für Cannabisanbauvereine.
+                  Optimieren Sie Ihre Dokumentations- und Berichtspflichten
+                  gemäß dem neuen Cannabisgesetz (CanG).
                 </p>
+
               </div>
               <div className="space-x-4">
-                <Button className="font-bold bg-green-700 dark:bg-yellow-600 text-white hover:bg-green-800 dark:hover:bg-yellow-500">Request a Demo</Button> {/* Added hover effect */}
-                <Button variant="outline" className="border-green-700 dark:border-yellow-500 text-green-700 dark:text-yellow-500 hover:bg-green-100 dark:hover:bg-stone-800">Learn More</Button> {/* Added hover effect */}
+                <Button className="bg-green-700 font-bold text-white hover:bg-green-800 dark:bg-yellow-600 dark:hover:bg-yellow-500">
+                  Request a Demo
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border-green-700 text-green-700 hover:bg-green-100 dark:border-yellow-500 dark:text-yellow-500 dark:hover:bg-stone-800"
+                >
+                  Learn More
+                </Button>
               </div>
             </div>
           </div>
         </section>
         <section
-          className="w-full py-12 md:py-16 lg:py-24 bg-gray-200 dark:bg-stone-950 "
+          className="w-full py-14 bg-gray-200 dark:bg-stone-950 md:py-16 lg:py-24"
           id="features"
         >
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
@@ -139,7 +197,7 @@ export default function LandingPage() {
             </h2>
             <Tabs defaultValue="documentation" className="w-full">
               <div className="mx-auto max-w-4xl">
-                <TabsList className="grid w-full grid-cols-3">
+                <TabsList className="grid w-full grid-cols-3 ">
                   <TabsTrigger
                     value="documentation"
                     className="w-full font-bold"
@@ -167,12 +225,16 @@ export default function LandingPage() {
                     </CardHeader>
                     <CardContent className="space-y-2">
                       <p>• Echtzeit-Erfassung aller Cannabis-Transaktionen</p>
-                      <p>• Detaillierte Aufzeichnung von Anbau, Weitergabe und Vernichtung</p>
-                      <p>• Präzise Mitgliederverwaltung mit Übergabeprotokollen</p>
+                      <p>
+                        • Detaillierte Aufzeichnung von Anbau, Weitergabe und
+                        Vernichtung
+                      </p>
+                      <p>
+                        • Präzise Mitgliederverwaltung mit Übergabeprotokollen
+                      </p>
                       <p>• Intelligentes Bestandsmanagement auf Gramm-Basis</p>
                       <p>• Vollständige Transportdokumentation</p>
                     </CardContent>
-
                   </Card>
                 </TabsContent>
                 <TabsContent value="reporting">
@@ -182,17 +244,28 @@ export default function LandingPage() {
                         Jährliche Berichterstattung
                       </CardTitle>
                       <CardDescription>
-                        Automatische Generierung des Jahresberichts bis 31. Januar
+                        Automatische Generierung des Jahresberichts bis 31.
+                        Januar
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-2">
-                      <p>• Automatische Generierung des Jahresberichts bis 31. Januar</p>
-                      <p>• Sortenspezifische Aufschlüsselung aller Cannabis-Mengen</p>
-                      <p>• Berechnung durchschnittlicher THC- und CBD-Gehalte</p>
-                      <p>• Übersichtliche Darstellung von Anbau, Weitergabe und Vernichtung</p>
+                      <p>
+                        • Automatische Generierung des Jahresberichts bis 31.
+                        Januar
+                      </p>
+                      <p>
+                        • Sortenspezifische Aufschlüsselung aller
+                        Cannabis-Mengen
+                      </p>
+                      <p>
+                        • Berechnung durchschnittlicher THC- und CBD-Gehalte
+                      </p>
+                      <p>
+                        • Übersichtliche Darstellung von Anbau, Weitergabe und
+                        Vernichtung
+                      </p>
                       <p>• Präzise Bestandserfassung zum Jahresende</p>
                     </CardContent>
-
                   </Card>
                 </TabsContent>
                 <TabsContent value="compliance">
@@ -202,32 +275,42 @@ export default function LandingPage() {
                         Gesetzeskonformität & Datensicherheit
                       </CardTitle>
                       <CardDescription>
-                        Datenschutzkonforme Speicherung aller sensiblen Informationen
+                        Datenschutzkonforme Speicherung aller sensiblen
+                        Informationen
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-2">
-                      <p>• Datenschutzkonforme Speicherung aller sensiblen Informationen</p>
-                      <p>• Redundante Datensicherung in deutschen Cloud-Rechenzentren</p>
-                      <p>• Automatische 5-Jahres-Archivierung aller relevanten Daten</p>
-                      <p>• Elektronische und fristgerechte Datenübermittlung an Behörden</p>
+                      <p>
+                        • Datenschutzkonforme Speicherung aller sensiblen
+                        Informationen
+                      </p>
+                      <p>
+                        • Redundante Datensicherung in deutschen
+                        Cloud-Rechenzentren
+                      </p>
+                      <p>
+                        • Automatische 5-Jahres-Archivierung aller relevanten
+                        Daten
+                      </p>
+                      <p>
+                        • Elektronische und fristgerechte Datenübermittlung an
+                        Behörden
+                      </p>
                       <p>• Zugriffskontrollen und Benutzerrechtemanagement</p>
                     </CardContent>
-
-
                   </Card>
                 </TabsContent>
               </div>
             </Tabs>
           </div>
         </section>
-        <section className="w-full py-12 md:py-16 lg:py-24" id="benefits">
-          
+        <section className="w-full py-14 md:py-16 lg:py-24" id="benefits">
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
             <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter sm:text-5xl">
               Vorteile für Betreiber von Anbauvereinigungen
             </h2>
-            <div className="mx-auto grid gap-6 max-w-6xl lg:grid-cols-3">
-              <Card className=" dark:bg-stone-900">
+            <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-3">
+              <Card className="dark:bg-stone-900">
                 <CardHeader>
                   <Scale className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
                   <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
@@ -235,7 +318,9 @@ export default function LandingPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  Eliminieren Sie Unsicherheiten im Umgang mit Behörden und Vorschriften. Gewährleisten Sie die vollständige Einhaltung des CanG für Ihre Anbauvereinigung.
+                  Eliminieren Sie Unsicherheiten im Umgang mit Behörden und
+                  Vorschriften. Gewährleisten Sie die vollständige Einhaltung
+                  des CanG für Ihre Anbauvereinigung.
                 </CardContent>
               </Card>
               <Card>
@@ -246,7 +331,9 @@ export default function LandingPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  Sparen Sie erhebliche Ressourcen im Vergleich zur Einrichtung und Wartung eines eigenen Dokumentations- und Archivierungssystems. Optimieren Sie Ihre Betriebskosten.
+                  Sparen Sie erhebliche Ressourcen im Vergleich zur Einrichtung
+                  und Wartung eines eigenen Dokumentations- und
+                  Archivierungssystems. Optimieren Sie Ihre Betriebskosten.
                 </CardContent>
               </Card>
               <Card>
@@ -257,61 +344,78 @@ export default function LandingPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  Profitieren Sie von einer direkten Zusammenarbeit auf Augenhöhe mit einem Softwareanbieter, der sich dem Erfolg Ihrer Anbauvereinigung verpflichtet fühlt und stets die neuesten CanG-Anforderungen berücksichtigt.
+                  Profitieren Sie von einer direkten Zusammenarbeit auf
+                  Augenhöhe mit einem Softwareanbieter, der sich dem Erfolg
+                  Ihrer Anbauvereinigung verpflichtet fühlt und stets die
+                  neuesten CanG-Anforderungen berücksichtigt.
                 </CardContent>
               </Card>
             </div>
           </div>
         </section>
         <section
-          className="w-full py-12 md:py-16 lg:py-24 bg-gray-200 dark:bg-stone-950"
+          className="w-full py-14 bg-gray-200 dark:bg-stone-950 md:py-16 lg:py-24"
           id="guarantees"
         >
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
-
-          <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter sm:text-5xl">
-            Unsere Garantie
-          </h2>
-          <div className="mx-auto grid max-w-3xl gap-6 lg:grid-cols-2">
-            <Card>
-              <CardHeader>
-                <Shield className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
-                <CardTitle className="text-center text-green-600 dark:text-yellow-500">
-                  Datensicherheit und Datenschutz
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                Serverinfrastruktur ausschließlich in Deutschland. Keine Speicherung personenbezogener Mitgliederdaten in ausländischen Cloud-Diensten. Volle Konformität mit der DSGVO und dem CanG.
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader>
-                <Clock className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
-                <CardTitle className="text-center text-green-600 dark:text-yellow-500">
-                  Gesetzeskonforme Aktualisierungen
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-center">
-                Zeitnahe Softwareanpassungen bei Änderungen der gesetzlichen Dokumentations- und Berichtspflichten. Stets auf dem neuesten Stand der CanG-Anforderungen für Ihre Anbauvereinigung.
-              </CardContent>
-            </Card>
-          </div>
+            <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter sm:text-5xl">
+              Unsere Garantie
+            </h2>
+            <div className="mx-auto grid max-w-4xl gap-6 lg:grid-cols-2">
+              <Card>
+                <CardHeader>
+                  <Shield className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
+                  <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
+                    Datensicherheit und Datenschutz
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  Serverinfrastruktur ausschließlich in Deutschland. Keine
+                  Speicherung personenbezogener Mitgliederdaten in ausländischen
+                  Cloud-Diensten. Volle Konformität mit der DSGVO und dem CanG.
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <Clock className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
+                  <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
+                    Gesetzeskonforme Aktualisierungen
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="text-center">
+                  Zeitnahe Softwareanpassungen bei Änderungen der gesetzlichen
+                  Dokumentations- und Berichtspflichten. Stets auf dem neuesten
+                  Stand der CanG-Anforderungen für Ihre Anbauvereinigung.
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-16 lg:py-24">
+        <section className="w-full py-14 md:py-16 lg:py-24">
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Bereit für effiziente CanG-Konformität?
-              </h2>
-              <p className="mx-auto max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl">
-                Schließen Sie sich GrowAClub an und profitieren Sie von reibungsloser Gesetzeskonformität für Ihren Cannabisanbauverein gemäß dem CanG.
-              </p>
-            </div>
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Bereit für effiziente CanG-Konformität?
+                </h2>
+                <p className="mx-auto max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl">
+                  Schließen Sie sich GrowAClub an und profitieren Sie von
+                  reibungsloser Gesetzeskonformität für Ihren
+                  Cannabisanbauverein gemäß dem CanG.
+                </p>
+              </div>
               <div className="space-x-4">
-                <Button className="font-bold bg-green-700 dark:bg-yellow-600 text-white hover:bg-green-800 dark:hover:bg-yellow-500">Request a Demo</Button> {/* Added hover effect */}
-                <Button variant="outline" className="border-green-700 dark:border-yellow-500 text-green-700 dark:text-yellow-500 hover:bg-green-100 dark:hover:bg-stone-800">Learn More</Button> {/* Added hover effect */}
+                <Button className="bg-green-700 font-bold text-white hover:bg-green-800 dark:bg-yellow-600 dark:hover:bg-yellow-500">
+                  Request a Demo
+                </Button>{" "}
+                {/* Added hover effect */}
+                <Button
+                  variant="outline"
+                  className="border-green-700 text-green-700 hover:bg-green-100 dark:border-yellow-500 dark:text-yellow-500 dark:hover:bg-stone-800"
+                >
+                  Learn More
+                </Button>{" "}
+                {/* Added hover effect */}
               </div>
             </div>
           </div>
