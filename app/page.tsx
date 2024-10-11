@@ -15,12 +15,12 @@ import {
   Shield,
   Clock,
   Handshake,
-  Mountain,
   Moon,
   Sun,
   Scale,
   HandCoins,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function LandingPage() {
   const [darkMode, setDarkMode] = useState(false);
@@ -59,36 +59,36 @@ export default function LandingPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <div id="top"></div> {/* Add this at the very top of your page */}
       <header
         className={`fixed z-10 flex h-14 w-full items-center justify-center bg-transparent px-4 backdrop-blur-md lg:px-6 ${darkMode ? "bg-gray-800" : "bg-white"}`}
       >
         <div className="flex w-full max-w-6xl items-center justify-between">
-          {" "}
-          {/* Adjusted to justify-between */}
-          <Link className="flex items-center justify-center" href="#">
-            <Mountain className="h-6 w-6" />
+          <Link className="flex items-center justify-center" href="#top">
+            {/* <Mountain className="h-6 w-6" /> */}
+            <Image src="GrowAClub_logo.png" alt="App Logo" className="h-12 w-12" width={48} height={48} />
             <span className="sr-only">GrowAClub</span>
           </Link>
-          <nav className="flex justify-center gap-4 sm:gap-6">
+          <nav className="flex justify-center gap-2 sm:gap-4">
             {" "}
             {/* Center the nav links */}
             <Link
-              className="text-sm font-medium underline-offset-4 hover:underline"
+              className="text-sm font-medium text-gray-800 dark:text-gray-200 border border-green-400 dark:border-yellow-600 hover:bg-gray-100 dark:hover:bg-stone-800 rounded-md px-4 py-2 transition-colors duration-200"
               href="#features"
             >
-              Features
+              Funktionen
             </Link>
             <Link
-              className="text-sm font-medium underline-offset-4 hover:underline"
+              className="text-sm font-medium text-gray-800 dark:text-gray-200 border border-green-400 dark:border-yellow-600 hover:bg-gray-100 dark:hover:bg-stone-800 rounded-md px-4 py-2 transition-colors duration-200"
               href="#benefits"
             >
-              Benefits
+              Vorteile
             </Link>
             <Link
-              className="text-sm font-medium underline-offset-4 hover:underline"
+              className="text-sm font-medium text-gray-800 dark:text-gray-200 border border-green-400 dark:border-yellow-600 hover:bg-gray-100 dark:hover:bg-stone-800 rounded-md px-4 py-2 transition-colors duration-200"
               href="#guarantees"
             >
-              Guarantees
+              Garantie
             </Link>
           </nav>
           <button
@@ -99,47 +99,43 @@ export default function LandingPage() {
               <Sun className="h-5 w-5" />
             ) : (
               <Moon className="h-5 w-5" />
-            )}{" "}
-            {/* Icon for dark/light mode */}
-            {/* <span className="ml-2">{darkMode ? 'Light Mode' : 'Dark Mode'}</span> */}
+            )}
           </button>
         </div>
       </header>
       <main className="flex-1 pt-14">
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full py-12 md:py-16 lg:py-24">
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-4 text-center">
+            <div className="flex flex-col items-center space-y-10 text-center">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                  Simplify CanG Compliance
-                  <br />
+                <h1 className="font-bold tracking-tighter text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+                  CanG konform mit
                 </h1>
-                <h1 className="pt-2 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-                  with{" "}
-                  <span className="text-green-800 dark:text-yellow-500">
+
+                <h2 className="pt-2 font-bold tracking-tighter text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
+                  <span className="text-green-700 dark:text-yellow-500">
                     GrowAClub
                   </span>
-                </h1>
-                <p className="mx-auto max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl">
-                  Streamline documentation and reporting for Cannabis
-                  cultivation associations (&quot;Cannabisanbauvereine&quot;)
-                  under the new Cannabis Act (&quot;CanG&quot;)
+                </h2>
+
+                <p className="mx-auto max-w-[700px] text-gray-700 dark:text-gray-300 md:text-lg">
+                  Die maßgeschneiderte Softwarelösung für Cannabisanbauvereine. Optimieren Sie Ihre Dokumentations- und Berichtspflichten gemäß dem neuen Cannabisgesetz (CanG).
                 </p>
               </div>
               <div className="space-x-4">
-                <Button>Get Started</Button>
-                <Button variant="outline">Learn More</Button>
+                <Button className="font-bold bg-green-700 dark:bg-yellow-600 text-white hover:bg-green-800 dark:hover:bg-yellow-500">Request a Demo</Button> {/* Added hover effect */}
+                <Button variant="outline" className="border-green-700 dark:border-yellow-500 text-green-700 dark:text-yellow-500 hover:bg-green-100 dark:hover:bg-stone-800">Learn More</Button> {/* Added hover effect */}
               </div>
             </div>
           </div>
         </section>
         <section
-          className="w-full bg-gray-200 py-12 dark:bg-zinc-950 md:py-24 lg:py-32"
+          className="w-full py-12 md:py-16 lg:py-24 bg-gray-200 dark:bg-stone-950 "
           id="features"
         >
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
             <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter sm:text-5xl">
-              Core Features
+              Zentrale Funktionen
             </h2>
             <Tabs defaultValue="documentation" className="w-full">
               <div className="mx-auto max-w-4xl">
@@ -148,175 +144,174 @@ export default function LandingPage() {
                     value="documentation"
                     className="w-full font-bold"
                   >
-                    Documentation
+                    Dokumentation
                   </TabsTrigger>
                   <TabsTrigger value="reporting" className="w-full font-bold">
-                    Reporting
+                    Berichterstattung
                   </TabsTrigger>
                   <TabsTrigger value="compliance" className="w-full font-bold">
-                    Compliance
+                    Rechtsvorschriften
                   </TabsTrigger>
                 </TabsList>
               </div>
               <div className="mx-auto mt-6 max-w-4xl">
                 <TabsContent value="documentation">
-                  <Card className="bg-white dark:bg-zinc-900">
+                  <Card className="bg-white dark:bg-stone-900">
                     <CardHeader>
-                      <CardTitle className="text-gold">
-                        Detailed Documentation
+                      <CardTitle className="text-xl text-green-700 dark:text-yellow-500">
+                        Permanente Dokumentation
                       </CardTitle>
                       <CardDescription>
-                        Comprehensive tracking of cannabis and propagating
-                        material
+                        Echtzeit-Erfassung aller Cannabis-Transaktionen
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-2">
-                      <p>• Record member information and transactions</p>
-                      <p>
-                        • Track quantities of cannabis and propagating material
-                      </p>
-                      <p>• Document cultivation, transfer, and destruction</p>
-                      <p>• Store records securely for 5 years</p>
+                      <p>• Echtzeit-Erfassung aller Cannabis-Transaktionen</p>
+                      <p>• Detaillierte Aufzeichnung von Anbau, Weitergabe und Vernichtung</p>
+                      <p>• Präzise Mitgliederverwaltung mit Übergabeprotokollen</p>
+                      <p>• Intelligentes Bestandsmanagement auf Gramm-Basis</p>
+                      <p>• Vollständige Transportdokumentation</p>
                     </CardContent>
+
                   </Card>
                 </TabsContent>
                 <TabsContent value="reporting">
-                  <Card className="bg-white dark:bg-zinc-900">
+                  <Card className="bg-white dark:bg-stone-900">
                     <CardHeader>
-                      <CardTitle>Automated Reporting</CardTitle>
+                      <CardTitle className="text-xl text-green-700 dark:text-yellow-500">
+                        Jährliche Berichterstattung
+                      </CardTitle>
                       <CardDescription>
-                        Effortless generation and submission of required reports
+                        Automatische Generierung des Jahresberichts bis 31. Januar
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-2">
-                      <p>• Manual trigger for on-demand reports</p>
-                      <p>• Automatic annual submission by January 31st</p>
-                      <p>
-                        • Detailed breakdowns by cannabis variety, THC, and CBD
-                        content
-                      </p>
-                      <p>• Anonymized electronic transmission to authorities</p>
+                      <p>• Automatische Generierung des Jahresberichts bis 31. Januar</p>
+                      <p>• Sortenspezifische Aufschlüsselung aller Cannabis-Mengen</p>
+                      <p>• Berechnung durchschnittlicher THC- und CBD-Gehalte</p>
+                      <p>• Übersichtliche Darstellung von Anbau, Weitergabe und Vernichtung</p>
+                      <p>• Präzise Bestandserfassung zum Jahresende</p>
                     </CardContent>
+
                   </Card>
                 </TabsContent>
                 <TabsContent value="compliance">
-                  <Card className="bg-white dark:bg-zinc-900">
+                  <Card className="bg-white dark:bg-stone-900">
                     <CardHeader>
-                      <CardTitle>Compliance Assurance</CardTitle>
+                      <CardTitle className="text-xl text-green-700 dark:text-yellow-500">
+                        Gesetzeskonformität & Datensicherheit
+                      </CardTitle>
                       <CardDescription>
-                        Stay aligned with CanG regulations effortlessly
+                        Datenschutzkonforme Speicherung aller sensiblen Informationen
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-2">
-                      <p>
-                        • Built-in forms and processes aligned with Section 26
-                      </p>
-                      <p>• Real-time updates to reflect regulatory changes</p>
-                      <p>• Guidance on proper documentation practices</p>
-                      <p>• Alerts for upcoming reporting deadlines</p>
+                      <p>• Datenschutzkonforme Speicherung aller sensiblen Informationen</p>
+                      <p>• Redundante Datensicherung in deutschen Cloud-Rechenzentren</p>
+                      <p>• Automatische 5-Jahres-Archivierung aller relevanten Daten</p>
+                      <p>• Elektronische und fristgerechte Datenübermittlung an Behörden</p>
+                      <p>• Zugriffskontrollen und Benutzerrechtemanagement</p>
                     </CardContent>
+
+
                   </Card>
                 </TabsContent>
               </div>
             </Tabs>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32" id="benefits">
+        <section className="w-full py-12 md:py-16 lg:py-24" id="benefits">
+          
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
             <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter sm:text-5xl">
-              Benefits for Operators
+              Vorteile für Betreiber von Anbauvereinigungen
             </h2>
-            <div className="grid gap-6 lg:grid-cols-3">
-              <Card>
+            <div className="mx-auto grid gap-6 max-w-6xl lg:grid-cols-3">
+              <Card className=" dark:bg-stone-900">
                 <CardHeader>
                   <Scale className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
                   <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
-                    Regulatory Confidence
+                    Rechtssicherheit
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  Eliminate uncertainty in dealing with authorities and
-                  regulations, ensuring your club stays compliant.
+                  Eliminieren Sie Unsicherheiten im Umgang mit Behörden und Vorschriften. Gewährleisten Sie die vollständige Einhaltung des CanG für Ihre Anbauvereinigung.
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
                   <HandCoins className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
                   <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
-                    Financial savings
+                    Kosteneffizienz
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  Save valuable money and time compared to setting up and
-                  maintaining your own documentation or archival storage system.
+                  Sparen Sie erhebliche Ressourcen im Vergleich zur Einrichtung und Wartung eines eigenen Dokumentations- und Archivierungssystems. Optimieren Sie Ihre Betriebskosten.
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
                   <Handshake className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
                   <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
-                    Trusted Partnership
+                    Vertrauensvolle Partnerschaft
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  Enjoy direct, eye-level cooperation with a software provider
-                  committed to your success.
+                  Profitieren Sie von einer direkten Zusammenarbeit auf Augenhöhe mit einem Softwareanbieter, der sich dem Erfolg Ihrer Anbauvereinigung verpflichtet fühlt und stets die neuesten CanG-Anforderungen berücksichtigt.
                 </CardContent>
               </Card>
             </div>
           </div>
         </section>
         <section
-          className="w-full bg-gray-200 py-12 dark:bg-zinc-950 md:py-24 lg:py-32"
+          className="w-full py-12 md:py-16 lg:py-24 bg-gray-200 dark:bg-stone-950"
           id="guarantees"
         >
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
-            <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter sm:text-5xl">
-              Our Guarantees
-            </h2>
-            <div className="mx-auto grid max-w-3xl gap-6 lg:grid-cols-2">
-              <Card>
-                <CardHeader>
-                  <Shield className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
-                  <CardTitle className="text-center text-green-600 dark:text-yellow-500">
-                    Data Security
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                  Server infrastructure in Germany. No personal member data
-                  stored in cloud storage abroad.
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <Clock className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
-                  <CardTitle className="text-center text-green-600 dark:text-yellow-500">
-                    Rapid Adaptability
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="text-center">
-                  Swift software updates to align with changes in statutory
-                  documentation and reporting obligations.
-                </CardContent>
-              </Card>
-            </div>
+
+          <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter sm:text-5xl">
+            Unsere Garantie
+          </h2>
+          <div className="mx-auto grid max-w-3xl gap-6 lg:grid-cols-2">
+            <Card>
+              <CardHeader>
+                <Shield className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
+                <CardTitle className="text-center text-green-600 dark:text-yellow-500">
+                  Datensicherheit und Datenschutz
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                Serverinfrastruktur ausschließlich in Deutschland. Keine Speicherung personenbezogener Mitgliederdaten in ausländischen Cloud-Diensten. Volle Konformität mit der DSGVO und dem CanG.
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <Clock className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
+                <CardTitle className="text-center text-green-600 dark:text-yellow-500">
+                  Gesetzeskonforme Aktualisierungen
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                Zeitnahe Softwareanpassungen bei Änderungen der gesetzlichen Dokumentations- und Berichtspflichten. Stets auf dem neuesten Stand der CanG-Anforderungen für Ihre Anbauvereinigung.
+              </CardContent>
+            </Card>
+          </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full py-12 md:py-16 lg:py-24">
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Ready to Simplify Your Compliance?
-                </h2>
-                <p className="mx-auto max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl">
-                  Join GrowAClub today and experience hassle-free CanG
-                  compliance for your Cannabisanbauverein.
-                </p>
-              </div>
+            <div className="space-y-2">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Bereit für effiziente CanG-Konformität?
+              </h2>
+              <p className="mx-auto max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl">
+                Schließen Sie sich GrowAClub an und profitieren Sie von reibungsloser Gesetzeskonformität für Ihren Cannabisanbauverein gemäß dem CanG.
+              </p>
+            </div>
               <div className="space-x-4">
-                <Button>Sign Up Now</Button>
-                <Button variant="outline">Request a Demo</Button>
+                <Button className="font-bold bg-green-700 dark:bg-yellow-600 text-white hover:bg-green-800 dark:hover:bg-yellow-500">Request a Demo</Button> {/* Added hover effect */}
+                <Button variant="outline" className="border-green-700 dark:border-yellow-500 text-green-700 dark:text-yellow-500 hover:bg-green-100 dark:hover:bg-stone-800">Learn More</Button> {/* Added hover effect */}
               </div>
             </div>
           </div>

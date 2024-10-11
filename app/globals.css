@@ -85,7 +85,3 @@ body {
     @apply rounded-sm bg-green-400/40 transition-colors duration-300 dark:bg-green-800/40;
   }
 }
-
-.text-gold {
-  color: #ca8a04; /* or any specific gold color code */
-}
