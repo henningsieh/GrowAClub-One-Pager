@@ -133,7 +133,7 @@ export default function LandingPage() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <nav className="fixed left-0 top-14 flex w-full flex-col items-center bg-white shadow-md dark:bg-stone-800 md:hidden">
+        <nav className="fixed left-0 top-14 flex w-full flex-col items-center bg-gray-50 pb-2 shadow-md dark:bg-stone-800 md:hidden">
           {/* Added flex and items-center */}
           <Link
             className="block border-b border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 dark:border-gray-700 dark:text-gray-200"
@@ -203,27 +203,28 @@ export default function LandingPage() {
             </h2>
             <Tabs defaultValue="documentation" className="w-full">
               <div className="mx-auto max-w-4xl">
-                <TabsList className="grid min-h-28 w-full grid-cols-1 bg-green-800 dark:bg-yellow-800 md:min-h-12 md:grid-cols-3">
+                <TabsList className="grid min-h-24 w-full grid-cols-1 bg-green-800 dark:bg-yellow-800 md:min-h-9 md:grid-cols-3">
                   <TabsTrigger
                     value="documentation"
-                    className="w-full text-xs font-bold sm:text-base"
+                    className="w-full font-bold data-[state=inactive]:text-gray-300"
                   >
                     Dokumentation
                   </TabsTrigger>
                   <TabsTrigger
                     value="reporting"
-                    className="w-full text-xs font-bold sm:text-base"
+                    className="w-full font-bold data-[state=inactive]:text-gray-300"
                   >
                     Berichterstattung
                   </TabsTrigger>
                   <TabsTrigger
                     value="compliance"
-                    className="w-full text-xs font-bold sm:text-base"
+                    className="w-full font-bold data-[state=inactive]:text-gray-300"
                   >
                     Rechtsvorschriften
                   </TabsTrigger>
                 </TabsList>
               </div>
+
               <div className="mx-auto mt-6 max-w-4xl">
                 <TabsContent value="documentation">
                   <Card className="bg-white dark:bg-stone-900">
@@ -326,7 +327,7 @@ export default function LandingPage() {
               <Card className="dark:bg-stone-900">
                 <CardHeader>
                   <Scale className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
-                  <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
+                  <CardTitle className="text-center text-3xl text-green-600 dark:text-yellow-500">
                     Rechtssicherheit
                   </CardTitle>
                 </CardHeader>
@@ -339,7 +340,7 @@ export default function LandingPage() {
               <Card className="dark:bg-stone-900">
                 <CardHeader>
                   <HandCoins className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
-                  <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
+                  <CardTitle className="text-center text-3xl text-green-600 dark:text-yellow-500">
                     Kosteneffizienz
                   </CardTitle>
                 </CardHeader>
@@ -352,7 +353,7 @@ export default function LandingPage() {
               <Card className="dark:bg-stone-900">
                 <CardHeader>
                   <Handshake className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
-                  <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
+                  <CardTitle className="text-center text-3xl text-green-600 dark:text-yellow-500">
                     Vertrauensvolle Partnerschaft
                   </CardTitle>
                 </CardHeader>
