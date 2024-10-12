@@ -248,20 +248,21 @@ export default function LandingPage() {
                         Permanente Dokumentation
                       </CardTitle>
                       <CardDescription>
-                        Echtzeit-Erfassung aller Cannabis-Transaktionen
+                        Gesetzlich vorgeschriebene Echtzeit-Erfassung
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-2">
-                      <p>• Echtzeit-Erfassung aller Cannabis-Transaktionen</p>
+                      <p>• Echtzeit-Erfassung aller Cannabis-Weitergaben</p>
                       <p>
-                        • Detaillierte Aufzeichnung von Anbau, Weitergabe und
-                        Vernichtung
+                        • Detaillierte Aufzeichnung von Anbau und Vernichtung
                       </p>
                       <p>
-                        • Präzise Mitgliederverwaltung mit Übergabeprotokollen
+                        • Aktuelle Mitgliederverwaltung mit Übergabeprotokollen
                       </p>
                       <p>• Intelligentes Bestandsmanagement auf Gramm-Basis</p>
-                      <p>• Vollständige Transportdokumentation</p>
+                      <p>
+                        • Vollständige Dokumentation aller Cannabus-Transporte
+                      </p>
                     </CardContent>
                   </Card>
                 </TabsContent>
@@ -272,8 +273,8 @@ export default function LandingPage() {
                         Jährliche Berichterstattung
                       </CardTitle>
                       <CardDescription>
-                        Automatische Generierung des Jahresberichts bis 31.
-                        Januar
+                        Automatische Generierung des gesetzlich vorgeschriebenen
+                        Jahresberichts
                       </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-2">
@@ -285,9 +286,7 @@ export default function LandingPage() {
                         • Sortenspezifische Aufschlüsselung aller
                         Cannabis-Mengen
                       </p>
-                      <p>
-                        • Berechnung durchschnittlicher THC- und CBD-Gehalte
-                      </p>
+                      <p>• Angabe durchschnittlicher THC- und CBD-Gehalte</p>
                       <p>
                         • Übersichtliche Darstellung von Anbau, Weitergabe und
                         Vernichtung
