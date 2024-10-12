@@ -133,7 +133,7 @@ export default function LandingPage() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <nav className="fixed left-0 top-14 flex w-full flex-col items-center bg-gray-50 pb-2 shadow-md dark:bg-stone-800 md:hidden">
+        <nav className="fixed left-0 top-14 flex w-full flex-col items-center bg-gray-100 pb-2 shadow-md dark:bg-zinc-800 md:hidden">
           {/* Added flex and items-center */}
           <Link
             className="block border-b border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 dark:border-gray-700 dark:text-gray-200"
@@ -163,15 +163,15 @@ export default function LandingPage() {
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
             <div className="flex flex-col items-center space-y-10 text-center">
               <div className="space-y-2">
-                <h1 className="text-xl font-bold tracking-tighter sm:text-2xl md:text-3xl lg:text-4xl">
+                <p className="text-xl font-bold tracking-tighter sm:text-2xl md:text-3xl lg:text-4xl">
                   CanG konform mit
-                </h1>
+                </p>
 
-                <h2 className="pt-2 text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
+                <h1 className="pt-2 text-6xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                   <span className="text-green-700 dark:text-yellow-500">
                     GrowAClub
                   </span>
-                </h2>
+                </h1>
 
                 <p className="mx-auto max-w-[700px] text-gray-700 dark:text-gray-300 md:text-lg">
                   Die maßgeschneiderte Softwarelösung für Cannabisanbauvereine.
@@ -203,22 +203,22 @@ export default function LandingPage() {
             </h2>
             <Tabs defaultValue="documentation" className="w-full">
               <div className="mx-auto max-w-4xl">
-                <TabsList className="grid min-h-24 w-full grid-cols-1 bg-green-800 dark:bg-yellow-800 md:min-h-9 md:grid-cols-3">
+                <TabsList className="grid min-h-28 w-full grid-cols-1 bg-green-800 dark:bg-yellow-700 md:min-h-10 md:grid-cols-3">
                   <TabsTrigger
                     value="documentation"
-                    className="w-full font-bold data-[state=inactive]:text-gray-300"
+                    className="w-full text-base font-bold data-[state=inactive]:text-gray-400"
                   >
                     Dokumentation
                   </TabsTrigger>
                   <TabsTrigger
                     value="reporting"
-                    className="w-full font-bold data-[state=inactive]:text-gray-300"
+                    className="w-full text-base font-bold data-[state=inactive]:text-gray-400"
                   >
                     Berichterstattung
                   </TabsTrigger>
                   <TabsTrigger
                     value="compliance"
-                    className="w-full font-bold data-[state=inactive]:text-gray-300"
+                    className="w-full text-base font-bold data-[state=inactive]:text-gray-400"
                   >
                     Rechtsvorschriften
                   </TabsTrigger>
@@ -380,7 +380,7 @@ export default function LandingPage() {
               <Card className="dark:bg-stone-900">
                 <CardHeader>
                   <Shield className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
-                  <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
+                  <CardTitle className="text-center text-3xl text-green-600 dark:text-yellow-500">
                     Datensicherheit und Datenschutz
                   </CardTitle>
                 </CardHeader>
@@ -393,7 +393,7 @@ export default function LandingPage() {
               <Card className="dark:bg-stone-900">
                 <CardHeader>
                   <Clock className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
-                  <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
+                  <CardTitle className="text-center text-3xl text-green-600 dark:text-yellow-500">
                     Gesetzeskonforme Aktualisierungen
                   </CardTitle>
                 </CardHeader>

@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Montserrat } from "next/font/google"; // Import the Montserrat font
+import { Roboto } from "next/font/google"; // Import the Roboto font
+
+const montserratFont = Montserrat({ subsets: ["latin"], weight: "400" }); // Load the Montserrat font
+const robotoFont = Roboto({ subsets: ["latin"], weight: "400" }); // Load the Roboto font
 
 export const metadata: Metadata = {
   title: "GrowAClub | by Growers.land",
@@ -14,7 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`mx-auto antialiased`}>{children}</body>
+      <body
+        className={`mx-auto antialiased ${robotoFont.className} ${montserratFont.className}`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

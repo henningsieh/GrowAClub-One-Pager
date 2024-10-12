@@ -4,6 +4,7 @@
 
 body {
   font-family:
+    "Roboto",
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -22,7 +23,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 @layer utilities {
