@@ -77,7 +77,7 @@ export default function LandingPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <header
-        className={`fixed z-10 flex h-14 w-full items-center justify-center bg-transparent px-4 backdrop-blur-md lg:px-6 ${darkMode ? "bg-gray-800" : "bg-white"}`}
+        className={`fixed z-10 flex h-14 w-full items-center justify-center ${darkMode ? "bg-stone-900 bg-opacity-70" : "bg-white bg-opacity-70"} px-4 backdrop-blur-md lg:px-6`}
       >
         <div className="flex w-full max-w-6xl items-center justify-between">
           <Link
