@@ -25,15 +25,29 @@ import {
 import Image from "next/image";
 
 export default function LandingPage() {
-  const [darkMode, setDarkMode] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(false); // Default to light theme
 
   const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle("dark", !darkMode);
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    document.documentElement.classList.toggle("dark", newDarkMode);
+    // Save the selected theme to local storage
+    if (typeof window !== "undefined") {
+      localStorage.setItem("theme", newDarkMode ? "dark" : "light");
+    }
   };
 
   useEffect(() => {
+    // Load theme from local storage when the component mounts
+    if (typeof window !== "undefined") {
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme === "dark") {
+        setDarkMode(true);
+        document.documentElement.classList.add("dark");
+      }
+    }
+
     const handleScroll = (e: Event) => {
       e.preventDefault();
       const target = e.target as HTMLAnchorElement;
@@ -158,6 +172,7 @@ export default function LandingPage() {
           </Link>
         </nav>
       )}
+
       <main className="flex-1 pt-14">
         <section className="w-full py-8 md:py-16 lg:py-24">
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
