@@ -20,7 +20,7 @@ import {
   Scale,
   HandCoins,
   MenuIcon,
-  XIcon
+  XIcon,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -66,10 +66,14 @@ export default function LandingPage() {
         className={`fixed z-10 flex h-14 w-full items-center justify-center bg-transparent px-4 backdrop-blur-md lg:px-6 ${darkMode ? "bg-gray-800" : "bg-white"}`}
       >
         <div className="flex w-full max-w-6xl items-center justify-between">
-          <Link className="flex items-center justify-center" href="/" onClick={(event) => {
+          <Link
+            className="flex items-center justify-center"
+            href="/"
+            onClick={(event) => {
               event.preventDefault(); // Prevent default link behavior
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}>
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
             {/* Added onClick to handle smooth scroll */}
             <Image
               src="GrowAClub_logo.png"
@@ -80,7 +84,7 @@ export default function LandingPage() {
             />
             <span className="sr-only">GrowAClub</span>
           </Link>
-          
+
           {/* Mobile Burger Menu */}
           <button
             className="flex items-center md:hidden"
@@ -92,22 +96,23 @@ export default function LandingPage() {
               <MenuIcon className="h-6 w-6 text-stone-800 dark:text-stone-200" /> // Show MenuIcon when mobileMenuOpen is false
             )}
           </button>
+
           {/* Desktop Navigation */}
           <nav className="hidden justify-center gap-2 sm:gap-4 md:flex">
             <Link
-              className="rounded-md border border-green-400 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
+              className="rounded-md border border-green-500 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
               href="#features"
             >
               Funktionen
             </Link>
             <Link
-              className="rounded-md border border-green-400 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
+              className="rounded-md border border-green-500 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
               href="#benefits"
             >
               Vorteile
             </Link>
             <Link
-              className="rounded-md border border-green-400 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
+              className="rounded-md border border-green-500 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
               href="#guarantees"
             >
               Garantie
@@ -125,9 +130,11 @@ export default function LandingPage() {
           </button>
         </div>
       </header>
+
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <nav className="fixed left-0 top-14 w-full bg-white shadow-md dark:bg-stone-800 md:hidden">
+        <nav className="fixed left-0 top-14 flex w-full flex-col items-center bg-white shadow-md dark:bg-stone-800 md:hidden">
+          {/* Added flex and items-center */}
           <Link
             className="block border-b border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 dark:border-gray-700 dark:text-gray-200"
             href="#features"
@@ -152,7 +159,7 @@ export default function LandingPage() {
         </nav>
       )}
       <main className="flex-1 pt-14">
-        <section className="w-full py-14 md:py-16 lg:py-24">
+        <section className="w-full py-8 md:py-16 lg:py-24">
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
             <div className="flex flex-col items-center space-y-10 text-center">
               <div className="space-y-2">
@@ -171,7 +178,6 @@ export default function LandingPage() {
                   Optimieren Sie Ihre Dokumentations- und Berichtspflichten
                   gemäß dem neuen Cannabisgesetz (CanG).
                 </p>
-
               </div>
               <div className="space-x-4">
                 <Button className="bg-green-700 font-bold text-white hover:bg-green-800 dark:bg-yellow-600 dark:hover:bg-yellow-500">
@@ -188,7 +194,7 @@ export default function LandingPage() {
           </div>
         </section>
         <section
-          className="w-full py-14 bg-gray-200 dark:bg-stone-950 md:py-16 lg:py-24"
+          className="w-full bg-gray-200 py-14 dark:bg-zinc-800 md:py-16 lg:py-24"
           id="features"
         >
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
@@ -197,17 +203,23 @@ export default function LandingPage() {
             </h2>
             <Tabs defaultValue="documentation" className="w-full">
               <div className="mx-auto max-w-4xl">
-                <TabsList className="grid w-full grid-cols-3 ">
+                <TabsList className="grid min-h-28 w-full grid-cols-1 bg-green-800 dark:bg-yellow-800 md:min-h-12 md:grid-cols-3">
                   <TabsTrigger
                     value="documentation"
-                    className="w-full font-bold"
+                    className="w-full text-xs font-bold sm:text-base"
                   >
                     Dokumentation
                   </TabsTrigger>
-                  <TabsTrigger value="reporting" className="w-full font-bold">
+                  <TabsTrigger
+                    value="reporting"
+                    className="w-full text-xs font-bold sm:text-base"
+                  >
                     Berichterstattung
                   </TabsTrigger>
-                  <TabsTrigger value="compliance" className="w-full font-bold">
+                  <TabsTrigger
+                    value="compliance"
+                    className="w-full text-xs font-bold sm:text-base"
+                  >
                     Rechtsvorschriften
                   </TabsTrigger>
                 </TabsList>
@@ -304,6 +316,7 @@ export default function LandingPage() {
             </Tabs>
           </div>
         </section>
+
         <section className="w-full py-14 md:py-16 lg:py-24" id="benefits">
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
             <h2 className="mb-8 text-center text-3xl font-bold tracking-tighter sm:text-5xl">
@@ -323,7 +336,7 @@ export default function LandingPage() {
                   des CanG für Ihre Anbauvereinigung.
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="dark:bg-stone-900">
                 <CardHeader>
                   <HandCoins className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
                   <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
@@ -336,7 +349,7 @@ export default function LandingPage() {
                   Archivierungssystems. Optimieren Sie Ihre Betriebskosten.
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="dark:bg-stone-900">
                 <CardHeader>
                   <Handshake className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
                   <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
@@ -353,8 +366,9 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+
         <section
-          className="w-full py-14 bg-gray-200 dark:bg-stone-950 md:py-16 lg:py-24"
+          className="w-full bg-gray-200 py-14 dark:bg-zinc-800 md:py-16 lg:py-24"
           id="guarantees"
         >
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
@@ -362,7 +376,7 @@ export default function LandingPage() {
               Unsere Garantie
             </h2>
             <div className="mx-auto grid max-w-4xl gap-6 lg:grid-cols-2">
-              <Card>
+              <Card className="dark:bg-stone-900">
                 <CardHeader>
                   <Shield className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
                   <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
@@ -375,7 +389,7 @@ export default function LandingPage() {
                   Cloud-Diensten. Volle Konformität mit der DSGVO und dem CanG.
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="dark:bg-stone-900">
                 <CardHeader>
                   <Clock className="mx-auto mb-2 h-10 w-10 text-green-600 dark:text-yellow-500" />
                   <CardTitle className="text-center text-xl text-green-600 dark:text-yellow-500">
@@ -391,6 +405,7 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+
         <section className="w-full py-14 md:py-16 lg:py-24">
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
             <div className="flex flex-col items-center space-y-4 text-center">
@@ -421,6 +436,7 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
+
       <footer className="w-full border-t py-6">
         <div className="container mx-auto flex max-w-6xl flex-col items-center justify-between px-4 sm:flex-row md:px-6">
           <p className="text-xs text-gray-500 dark:text-gray-400">
