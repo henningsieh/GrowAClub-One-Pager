@@ -620,7 +620,7 @@ export default function LandingPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="text-center">
-                  - Serverinfrastruktur ausschließlich in Europa - volle
+                  Serverinfrastruktur ausschließlich in Europa und volle
                   Konformität mit der DSGVO und dem CanG
                 </CardContent>
               </Card>
@@ -633,8 +633,8 @@ export default function LandingPage() {
                 </CardHeader>
                 <CardContent className="text-center">
                   Zeitnahe Softwareanpassungen bei Änderungen der gesetzlichen
-                  Dokumentations- und Berichtspflichten. Stets auf dem neuesten
-                  Stand der CanG-Anforderungen für Ihren Anbauverein.
+                  Dokumentations- und Berichtspflichten und immer auf dem
+                  neuesten Stand der CanG-Anforderungen für Ihren Anbauverein.
                 </CardContent>
               </Card>
             </div>
