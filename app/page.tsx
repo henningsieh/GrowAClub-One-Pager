@@ -26,10 +26,10 @@ import {
   FileText,
   Database,
   ScrollText,
-  Zap,
+  // Zap,
 } from "lucide-react";
 import Image from "next/image";
-import { PricingTier } from "@/components/PricingTier";
+// import { PricingTier } from "@/components/PricingTier";
 
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -138,12 +138,12 @@ export default function LandingPage() {
             >
               Garantie
             </Link>
-            <Link
+            {/* <Link
               className="rounded-md border border-green-500 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
               href="#pricing"
             >
               Preise
-            </Link>
+            </Link> */}
           </nav>
           <button
             onClick={toggleTheme}
@@ -183,13 +183,13 @@ export default function LandingPage() {
           >
             Garantie
           </Link>
-          <Link
+          {/* <Link
             className="block border-b border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 dark:border-gray-700 dark:text-gray-200"
             href="#pricing"
             onClick={() => setMobileMenuOpen(false)}
           >
             Preise
-          </Link>
+          </Link> */}
         </nav>
       )}
 
@@ -218,14 +218,14 @@ export default function LandingPage() {
                 <Button className="bg-green-700 px-8 py-4 text-lg text-white hover:bg-green-800 dark:bg-yellow-600 dark:hover:bg-yellow-500">
                   Demo anfordern
                 </Button>
-                <Link href="#pricing">
+                {/* <Link href="#pricing">
                   <Button
                     variant="outline"
                     className="border-green-700 px-8 py-4 text-lg text-green-700 hover:bg-green-100 dark:border-yellow-500 dark:text-yellow-500 dark:hover:bg-stone-800" // Increased padding
                   >
                     Preise
                   </Button>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
@@ -640,7 +640,7 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
-
+        {/* 
         <section
           className="w-full bg-gray-50 py-14 dark:bg-stone-900 md:py-16 lg:py-24"
           id="pricing"
@@ -695,7 +695,7 @@ export default function LandingPage() {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="w-full bg-gray-200 py-14 dark:bg-zinc-800 md:py-16 lg:py-24">
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
