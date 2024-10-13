@@ -714,14 +714,14 @@ export default function LandingPage() {
                 <Button className="bg-green-700 px-8 py-4 text-lg text-white hover:bg-green-800 dark:bg-yellow-600 dark:hover:bg-yellow-500">
                   Demo anfordern
                 </Button>
-                <Link href="#pricing">
+                {/* <Link href="#pricing">
                   <Button
                     variant="outline"
                     className="border-green-700 px-8 py-4 text-lg text-green-700 hover:bg-green-100 dark:border-yellow-500 dark:text-yellow-500 dark:hover:bg-stone-800" // Increased padding
                   >
                     Preise
                   </Button>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
