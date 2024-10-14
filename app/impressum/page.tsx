@@ -19,7 +19,7 @@ export const metadata = {
 };
 
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { ExternalLink } from "lucide-react";
 
@@ -30,9 +30,9 @@ export default function Imprint() {
         <div className="container mx-auto max-w-4xl px-4 py-8 md:py-16">
           <Card className="bg-white dark:bg-stone-900">
             <CardHeader>
-              <CardTitle className="text-3xl font-bold text-green-700 dark:text-yellow-500">
+              <h1 className="text-3xl font-bold text-green-700 dark:text-yellow-500">
                 Impressum
-              </CardTitle>
+              </h1>
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
               <section>
