@@ -1,4 +1,7 @@
-export const metadata = {
+import { Metadata } from "next";
+import keywordsData from "@/assets/keywords.json";
+
+export const metadata: Metadata = {
   title: "Impressum - GrowAClub.de | Softwarelösung für Cannabisanbauvereine",
   description: "Rechtliche Informationen und Kontaktdaten für GrowAClub.de",
   openGraph: {
@@ -16,6 +19,7 @@ export const metadata = {
   alternates: {
     canonical: "https://growaclub.de/impressum",
   },
+  keywords: keywordsData.keywords,
 };
 
 import React from "react";
