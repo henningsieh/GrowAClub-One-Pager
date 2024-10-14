@@ -34,7 +34,7 @@ export default function Imprint() {
         <div className="container mx-auto max-w-4xl px-4 py-8 md:py-16">
           <Card className="bg-white dark:bg-stone-900">
             <CardHeader>
-              <h1 className="text-3xl font-bold text-green-700 dark:text-yellow-500">
+              <h1 className="text-2xl font-bold text-green-700 dark:text-yellow-500 md:text-3xl">
                 Impressum
               </h1>
             </CardHeader>
