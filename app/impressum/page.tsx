@@ -67,7 +67,7 @@ export default function Imprint() {
                 <p>
                   Telefon: +49 151 546 172 46
                   <br />
-                  E-Mail: support@growagram.com
+                  E-Mail: info@webkult.de
                 </p>
               </section>
 
@@ -158,7 +158,7 @@ export default function Imprint() {
                   Art. 11, 12 DSA erreichen Sie wie folgt:
                 </p>
                 <p className="mt-2">
-                  E-Mail: support@growagram.com
+                  E-Mail: info@webkult.de
                   <br />
                   Telefon: +49 151 546 172 46
                 </p>
