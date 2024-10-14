@@ -15,7 +15,10 @@ const Footer = () => {
           >
             Impressum
           </Link>
-          <Link className="text-xs underline-offset-4 hover:underline" href="#">
+          <Link
+            className="text-xs underline-offset-4 hover:underline"
+            href="datenschutz"
+          >
             Datenschutzerklärung
           </Link>
         </nav>

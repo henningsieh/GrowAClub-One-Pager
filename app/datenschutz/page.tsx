@@ -1,22 +1,24 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw"; // Import rehype-raw for handling <br /> tags in md file
+
+import privacyAsMarkDown from "@/assets/datenschutz.md";
 
 export default function Imprint() {
-  const [markdownContent, setMarkdownContent] = useState("");
+  const markdownRef = useRef<HTMLDivElement>(null);
 
+  // opens links from privacy .md file in new tabs
   useEffect(() => {
-    fetch("/datenschutzerklaerung.md")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.text();
-      })
-      .then((text) => setMarkdownContent(text))
-      .catch((error) => console.error("Fetch error:", error));
+    if (markdownRef.current) {
+      const links = markdownRef.current.querySelectorAll("a");
+      links.forEach((link) => {
+        link.setAttribute("target", "_blank");
+        link.setAttribute("rel", "noopener noreferrer");
+      });
+    }
   }, []);
 
   return (
@@ -25,12 +27,16 @@ export default function Imprint() {
         <div className="container mx-auto max-w-4xl px-4 py-8 md:py-16">
           <Card className="bg-white dark:bg-stone-900">
             <CardHeader>
-              <CardTitle className="text-3xl font-bold text-green-700 dark:text-yellow-500">
+              <h1 className="text-2xl font-bold text-green-700 dark:text-yellow-500">
                 Datenschutzerklärung
-              </CardTitle>
+              </h1>
             </CardHeader>
             <CardContent className="prose dark:prose-invert max-w-none">
-              <ReactMarkdown>{markdownContent}</ReactMarkdown>
+              <div ref={markdownRef}>
+                <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+                  {privacyAsMarkDown}
+                </ReactMarkdown>
+              </div>
             </CardContent>
           </Card>
         </div>

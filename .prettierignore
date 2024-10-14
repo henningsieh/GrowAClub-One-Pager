@@ -1,0 +1,7 @@
+# Ignore all markdown files
+*.md
+
+# You can also exclude other files or directories if needed
+node_modules/
+build/
+out/
