@@ -1,4 +1,22 @@
-"use client";
+export const metadata = {
+  title: "Impressum - GrowAClub.de | Softwarelösung für Cannabisanbauvereine",
+  description: "Rechtliche Informationen und Kontaktdaten für GrowAClub.de",
+  openGraph: {
+    title: "Impressum - GrowAClub.de | Softwarelösung für Cannabisanbauvereine",
+    description: "Rechtliche Informationen und Kontaktdaten für GrowAClub.de",
+    url: "https://growaclub.de/impressum",
+    siteName: "GrowAClub",
+    locale: "de_DE",
+    type: "website",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://growaclub.de/impressum",
+  },
+};
 
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
