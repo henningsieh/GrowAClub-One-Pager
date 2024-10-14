@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import React from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -15,12 +14,8 @@ import {
   Shield,
   Clock,
   Handshake,
-  Moon,
-  Sun,
   Scale,
   HandCoins,
-  MenuIcon,
-  XIcon,
   ExternalLink,
   ShieldCheck,
   FileText,
@@ -28,173 +23,14 @@ import {
   ScrollText,
   // Zap,
 } from "lucide-react";
-import Image from "next/image";
+
 // import { PricingTier } from "@/components/PricingTier";
 
 export default function LandingPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(false); // Default to light theme
-
-  const toggleTheme = () => {
-    const newDarkMode = !darkMode;
-    setDarkMode(newDarkMode);
-    document.documentElement.classList.toggle("dark", newDarkMode);
-    // Save the selected theme to local storage
-    if (typeof window !== "undefined") {
-      localStorage.setItem("theme", newDarkMode ? "dark" : "light");
-    }
-  };
-
-  useEffect(() => {
-    // Load theme from local storage when the component mounts
-    if (typeof window !== "undefined") {
-      const storedTheme = localStorage.getItem("theme");
-      if (storedTheme === "dark") {
-        setDarkMode(true);
-        document.documentElement.classList.add("dark");
-      }
-    }
-
-    const handleScroll = (e: Event) => {
-      e.preventDefault();
-      const target = e.target as HTMLAnchorElement;
-      const id = target.getAttribute("href")?.slice(1);
-      if (id) {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-          });
-        }
-      }
-    };
-
-    const links = document.querySelectorAll('a[href^="#"]');
-    links.forEach((link) => {
-      link.addEventListener("click", handleScroll);
-    });
-
-    return () => {
-      links.forEach((link) => {
-        link.removeEventListener("click", handleScroll);
-      });
-    };
-  }, []);
-
   return (
     <div className="flex min-h-screen flex-col">
-      <header
-        className={`fixed z-10 flex h-14 w-full items-center justify-center ${darkMode ? "bg-stone-900 bg-opacity-70" : "bg-white bg-opacity-70"} px-4 backdrop-blur-md lg:px-6`}
-      >
-        <div className="flex w-full max-w-6xl items-center justify-between">
-          <Link
-            className="flex items-center justify-center"
-            href="/"
-            onClick={(event) => {
-              event.preventDefault(); // Prevent default link behavior
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-          >
-            {/* Added onClick to handle smooth scroll */}
-            <Image
-              src="GrowAClub_logo.png"
-              alt="App Logo"
-              className="h-8 w-8"
-              width={32}
-              height={32}
-            />
-            <span className="sr-only">GrowAClub</span>
-          </Link>
-
-          {/* Mobile Burger Menu */}
-          <button
-            className="flex items-center md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)} // Toggle mobile menu
-          >
-            {mobileMenuOpen ? (
-              <XIcon className="h-6 w-6 text-stone-800 dark:text-stone-200" /> // Show XIcon when mobileMenuOpen is true
-            ) : (
-              <MenuIcon className="h-6 w-6 text-stone-800 dark:text-stone-200" /> // Show MenuIcon when mobileMenuOpen is false
-            )}
-          </button>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden justify-center gap-2 sm:gap-4 md:flex">
-            <Link
-              className="rounded-md border border-green-500 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
-              href="#features"
-            >
-              Funktionen
-            </Link>
-            <Link
-              className="rounded-md border border-green-500 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
-              href="#benefits"
-            >
-              Vorteile
-            </Link>
-            <Link
-              className="rounded-md border border-green-500 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
-              href="#guarantees"
-            >
-              Garantie
-            </Link>
-            {/* <Link
-              className="rounded-md border border-green-500 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
-              href="#pricing"
-            >
-              Preise
-            </Link> */}
-          </nav>
-          <button
-            onClick={toggleTheme}
-            className="flex items-center rounded-md p-2 focus:outline-none"
-          >
-            {darkMode ? (
-              <Sun className="h-5 w-5" />
-            ) : (
-              <Moon className="h-5 w-5" />
-            )}
-          </button>
-        </div>
-      </header>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <nav className="fixed left-0 top-14 flex w-full flex-col items-center bg-gray-100 pb-2 shadow-md dark:bg-zinc-800 md:hidden">
-          {/* Added flex and items-center */}
-          <Link
-            className="block border-b border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 dark:border-gray-700 dark:text-gray-200"
-            href="#features"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Funktionen
-          </Link>
-          <Link
-            className="block border-b border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 dark:border-gray-700 dark:text-gray-200"
-            href="#benefits"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Vorteile
-          </Link>
-          <Link
-            className="block border-b border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 dark:border-gray-700 dark:text-gray-200"
-            href="#guarantees"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Garantie
-          </Link>
-          {/* <Link
-            className="block border-b border-gray-300 px-4 py-2 text-sm font-medium text-gray-800 dark:border-gray-700 dark:text-gray-200"
-            href="#pricing"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Preise
-          </Link> */}
-        </nav>
-      )}
-
       <main className="flex-1 pt-14">
-        <section className="w-full py-8 md:py-16 lg:py-24">
+        <section className="w-full py-8 md:py-16 lg:py-24" id="top">
           <div className="container mx-auto max-w-6xl px-4 md:px-6">
             <div className="flex flex-col items-center space-y-10 text-center">
               <div className="space-y-2">
@@ -727,28 +563,6 @@ export default function LandingPage() {
           </div>
         </section>
       </main>
-
-      <footer className="w-full border-t py-6">
-        <div className="container mx-auto flex max-w-6xl flex-col items-center justify-between px-4 sm:flex-row md:px-6">
-          <p className="text-xs text-gray-500 dark:text-gray-400">
-            © 2024 GrowAClub. All rights reserved.
-          </p>
-          <nav className="mt-4 flex gap-4 sm:mt-0 sm:gap-6">
-            <Link
-              className="text-xs underline-offset-4 hover:underline"
-              href="#"
-            >
-              Terms of Service
-            </Link>
-            <Link
-              className="text-xs underline-offset-4 hover:underline"
-              href="#"
-            >
-              Privacy
-            </Link>
-          </nav>
-        </div>
-      </footer>
     </div>
   );
 }

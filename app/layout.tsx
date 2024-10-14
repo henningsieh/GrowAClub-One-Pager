@@ -1,7 +1,10 @@
-import type { Metadata } from "next";
+import React from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
 import { Montserrat } from "next/font/google"; // Import the Montserrat font
 import { Roboto } from "next/font/google"; // Import the Roboto font
+import { Metadata } from "next";
 
 const montserratFont = Montserrat({ subsets: ["latin"], weight: "400" }); // Load the Montserrat font
 const robotoFont = Roboto({ subsets: ["latin"], weight: "400" }); // Load the Roboto font
@@ -22,7 +25,9 @@ export default function RootLayout({
       <body
         className={`mx-auto antialiased ${robotoFont.className} ${montserratFont.className}`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
