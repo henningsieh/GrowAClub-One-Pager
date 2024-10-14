@@ -24,8 +24,32 @@ h4,
 h5,
 h6 {
   font-family: "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
+  @apply font-bold;
 }
 
+h1 {
+  @apply my-8; /* Adds vertical margins (margin-top and margin-bottom) */
+}
+
+h2 {
+  @apply my-6;
+}
+
+h3 {
+  @apply my-5 ml-5;
+}
+
+h4 {
+  @apply my-4;
+}
+
+h5 {
+  @apply my-3;
+}
+
+h6 {
+  @apply my-2;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
