@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -21,12 +20,25 @@ import {
   FileText,
   Database,
   ScrollText,
-  // Zap,
 } from "lucide-react";
 
 // import { PricingTier } from "@/components/PricingTier";
 
+import {
+  inquiryEmailBody,
+  inquiryEmailSubject,
+  recipientAddress,
+} from "@/assets/InquiryEmailBody"; // Adjust the path based on your project structure
+
 export default function LandingPage() {
+  const handleDemoRequest = () => {
+    const recipient = encodeURIComponent(recipientAddress);
+    const subject = encodeURIComponent(inquiryEmailSubject);
+    const body = encodeURIComponent(inquiryEmailBody);
+
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+  };
+
   return (
     <div className="flex min-h-screen flex-col">
       <main className="flex-1 pt-14">
@@ -51,7 +63,10 @@ export default function LandingPage() {
                 </p>
               </div>
               <div className="space-x-4">
-                <Button className="bg-green-700 px-8 py-4 text-lg text-white hover:bg-green-800 dark:bg-yellow-600 dark:hover:bg-yellow-500">
+                <Button
+                  className="bg-green-700 px-8 py-4 text-lg text-white hover:bg-green-800 dark:bg-yellow-600 dark:hover:bg-yellow-500"
+                  onClick={handleDemoRequest}
+                >
                   Demo anfordern
                 </Button>
                 {/* <Link href="#pricing">
