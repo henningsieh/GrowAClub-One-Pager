@@ -562,7 +562,10 @@ export default function LandingPage() {
                 </p>
               </div>
               <div className="space-x-4">
-                <Button className="bg-green-700 px-8 py-4 text-lg text-white hover:bg-green-800 dark:bg-yellow-600 dark:hover:bg-yellow-500">
+                <Button
+                  className="bg-green-700 px-8 py-4 text-lg text-white hover:bg-green-800 dark:bg-yellow-600 dark:hover:bg-yellow-500"
+                  onClick={handleDemoRequest}
+                >
                   Demo anfordern
                 </Button>
                 {/* <Link href="#pricing">
