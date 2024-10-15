@@ -33,12 +33,13 @@ export const metadata: Metadata = {
   keywords: keywordsData.keywords,
 };
 
-import React from "react";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
 import "./globals.css";
-import { Montserrat } from "next/font/google";
-import { Roboto } from "next/font/google";
+
+import { Montserrat, Roboto } from "next/font/google";
 
 const montserratFont = Montserrat({ subsets: ["latin"], weight: "400" });
 const robotoFont = Roboto({ subsets: ["latin"], weight: "400" });
@@ -50,6 +51,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className="scroll-smooth">
+      <head>
+        <Script
+          defer={true}
+          data-domain="growaclub.de"
+          src="https://cdn.growagram.com/js/script.js"
+          strategy="afterInteractive"
+        />
+      </head>
       <body
         className={`mx-auto antialiased ${robotoFont.className} ${montserratFont.className}`}
       >
