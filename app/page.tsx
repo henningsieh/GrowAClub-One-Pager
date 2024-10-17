@@ -1,6 +1,6 @@
 "use client";
 
-import GuaranteeCard from "@/components/GuaranteeCard";
+import BenefitCard from "@/components/BenefitCard";
 import InfoCard from "@/components/InfoCard";
 import RequireDemoButton from "@/components/RequireDemoButton";
 
@@ -413,12 +413,12 @@ export default function LandingPage() {
               Unsere Garantie
             </h2>
             <div className="mx-auto grid max-w-4xl gap-6 lg:grid-cols-2">
-              <GuaranteeCard
+              <BenefitCard
                 Icon={Shield}
                 title="Datensicherheit und Datenschutz"
                 content="Serverinfrastruktur ausschließlich in Europa und volle Konformität mit der DSGVO und dem CanG."
               />
-              <GuaranteeCard
+              <BenefitCard
                 Icon={Clock}
                 title="Gesetzeskonforme Aktualisierungen"
                 content="Zeitnahe Softwareanpassungen bei Änderungen der gesetzlichen Dokumentations- und Berichtspflichten und immer auf dem neuesten Stand der CanG-Anforderungen für Ihren Anbauverein."

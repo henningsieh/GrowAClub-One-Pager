@@ -7,7 +7,7 @@ interface GuaranteeCardProps {
   content: string;
 }
 
-const GuaranteeCard: React.FC<GuaranteeCardProps> = ({
+const BenefitCard: React.FC<GuaranteeCardProps> = ({
   Icon,
   title,
   content,
@@ -25,4 +25,4 @@ const GuaranteeCard: React.FC<GuaranteeCardProps> = ({
   );
 };
 
-export default GuaranteeCard;
+export default BenefitCard;
