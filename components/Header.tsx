@@ -39,7 +39,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed z-10 flex h-14 w-full items-center justify-center ${darkMode ? "bg-stone-900 bg-opacity-70" : "bg-white bg-opacity-70"} px-4 backdrop-blur-md lg:px-6`}
+      className={`fixed z-10 flex h-14 w-full items-center justify-center ${darkMode ? "bg-zinc-800" : "bg-white"} bg-opacity-70 px-4 backdrop-blur-md lg:px-6`}
     >
       <div className="flex w-full max-w-6xl items-center justify-between">
         <Link
@@ -66,28 +66,28 @@ const Header = () => {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
-            <XIcon className="h-6 w-6 text-stone-800 dark:text-stone-200" />
+            <XIcon className="h-6 w-6 text-primary" />
           ) : (
-            <MenuIcon className="h-6 w-6 text-stone-800 dark:text-stone-200" />
+            <MenuIcon className="h-6 w-6 text-primary" />
           )}
         </button>
 
         {/* Desktop Navigation */}
         <nav className="hidden justify-center gap-2 sm:gap-4 md:flex">
           <Link
-            className="border-text-primary rounded-md border px-4 py-2 text-sm font-medium text-foreground transition-colors duration-200 hover:bg-gray-100"
+            className="rounded-md border border-primary-foreground px-4 py-2 text-sm font-medium transition-colors duration-300 hover:bg-primary/20"
             href="/#features"
           >
             Funktionen
           </Link>
           <Link
-            className="border-text-primary rounded-md border px-4 py-2 text-sm font-medium text-foreground transition-colors duration-200 hover:bg-gray-100"
+            className="rounded-md border border-primary-foreground px-4 py-2 text-sm font-medium transition-colors duration-300 hover:bg-primary/20"
             href="/#benefits"
           >
             Vorteile
           </Link>
           <Link
-            className="border-text-primary rounded-md border px-4 py-2 text-sm font-medium text-foreground transition-colors duration-200 hover:bg-gray-100"
+            className="rounded-md border border-primary-foreground px-4 py-2 text-sm font-medium transition-colors duration-300 hover:bg-primary/20"
             href="/#guarantees"
           >
             Garantie
