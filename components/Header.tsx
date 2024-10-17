@@ -75,19 +75,19 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden justify-center gap-2 sm:gap-4 md:flex">
           <Link
-            className="rounded-md border border-green-500 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
+            className="border-text-primary rounded-md border px-4 py-2 text-sm font-medium text-foreground transition-colors duration-200 hover:bg-gray-100"
             href="/#features"
           >
             Funktionen
           </Link>
           <Link
-            className="rounded-md border border-green-500 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
+            className="border-text-primary rounded-md border px-4 py-2 text-sm font-medium text-foreground transition-colors duration-200 hover:bg-gray-100"
             href="/#benefits"
           >
             Vorteile
           </Link>
           <Link
-            className="rounded-md border border-green-500 px-4 py-2 text-sm font-medium text-gray-800 transition-colors duration-200 hover:bg-gray-100 dark:border-yellow-600 dark:text-gray-200 dark:hover:bg-stone-800"
+            className="border-text-primary rounded-md border px-4 py-2 text-sm font-medium text-foreground transition-colors duration-200 hover:bg-gray-100"
             href="/#guarantees"
           >
             Garantie
